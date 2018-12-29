@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Port Id="osc_clk" Dir="IN"/>
+		<Port Id="led_red" Dir="OUT"/>
+		<Port Id="led_blue" Dir="OUT"/>
+		<Port Id="led_green" Dir="OUT"/>
+		<Port Id="pano_button" Dir="IN"/>
+		<Port Id="SYSRST_N" Dir="IN"/>
+		<Port Id="RESET_OUT_N" Dir="OUT"/>
+	</Ifc>
+</Interface>
+

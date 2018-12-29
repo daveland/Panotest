@@ -1,0 +1,23 @@
+
+
+
+
+# PlanAhead Generated physical constraints 
+
+NET "osc_clk" LOC = Y13;
+NET "led_blue" LOC = H13;
+NET "led_green" LOC = F13;
+NET "led_red" LOC = E12;
+NET "RESET_OUT_N" LOC = AA6;
+NET "SYSRST_N" LOC = AB14;
+NET "pano_button" LOC = H12;
+
+# PlanAhead Generated IO constraints 
+
+NET "led_blue" IOSTANDARD = LVCMOS33;
+NET "led_green" IOSTANDARD = LVCMOS33;
+NET "led_red" IOSTANDARD = LVCMOS33;
+NET "osc_clk" IOSTANDARD = LVCMOS33;
+NET "pano_button" IOSTANDARD = LVCMOS33;
+NET "RESET_OUT_N" IOSTANDARD = LVCMOS33;
+NET "SYSRST_N" IOSTANDARD = LVCMOS33;

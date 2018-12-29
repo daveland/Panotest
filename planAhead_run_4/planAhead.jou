@@ -1,0 +1,43 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Dec 19 03:38:16 2018
+# Process ID: 3665
+# Log file: /home/ise/testpano/planAhead_run_4/planAhead.log
+# Journal file: /home/ise/testpano/planAhead_run_4/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/ise/testpano/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin E12 [get_ports osc_clk]
+endgroup
+startgroup
+set_property package_pin Y13 [get_ports osc_clk]
+endgroup
+startgroup
+set_property package_pin H13 [get_ports led_blue]
+endgroup
+startgroup
+set_property package_pin F13 [get_ports led_green]
+endgroup
+startgroup
+set_property package_pin E12 [get_ports led_red]
+endgroup
+startgroup
+set_property package_pin AA6 [get_ports RESET_OUT_N]
+endgroup
+startgroup
+set_property package_pin AB14 [get_ports SYSRST_N]
+endgroup
+startgroup
+set_property package_pin H12 [get_ports pano_button]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list led_blue]]
+set_property iostandard LVCMOS33 [get_ports [list led_green]]
+set_property iostandard LVCMOS33 [get_ports [list led_red]]
+set_property iostandard LVCMOS33 [get_ports [list osc_clk]]
+set_property iostandard LVCMOS33 [get_ports [list pano_button]]
+set_property iostandard LVCMOS33 [get_ports [list RESET_OUT_N]]
+set_property iostandard LVCMOS33 [get_ports [list SYSRST_N]]
+save_constraints
