@@ -37,7 +37,7 @@ Setup/Hold to clock osc_clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-SYSRST_N    |   14.586(R)|      SLOW  |   -4.510(R)|      FAST  |clk100mhz         |   0.000|
+SYSRST_N    |   14.452(R)|      SLOW  |   -4.571(R)|      FAST  |clk100mhz         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock osc_clk to Pad
@@ -45,10 +45,10 @@ Clock osc_clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-RESET_OUT_N |        16.306(R)|      SLOW  |         9.659(R)|      FAST  |clk100mhz         |   0.000|
-led_blue    |         7.706(R)|      SLOW  |         4.577(R)|      FAST  |clk100mhz         |   0.000|
+RESET_OUT_N |         5.447(R)|      SLOW  |         3.368(R)|      FAST  |clk100mhz         |   0.000|
+led_blue    |         9.102(R)|      SLOW  |         5.332(R)|      FAST  |clk100mhz         |   0.000|
 led_green   |         5.207(R)|      SLOW  |         3.128(R)|      FAST  |clk100mhz         |   0.000|
-led_red     |         7.830(R)|      SLOW  |         4.625(R)|      FAST  |clk100mhz         |   0.000|
+led_red     |         9.173(R)|      SLOW  |         5.332(R)|      FAST  |clk100mhz         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock osc_clk
@@ -56,11 +56,11 @@ Clock to Setup on destination clock osc_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-osc_clk        |    2.393|         |         |         |
+osc_clk        |    2.501|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Wed Dec 19 04:18:12 2018 
+Analysis completed Sun Dec 30 00:07:42 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:

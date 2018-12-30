@@ -76,7 +76,7 @@ clockpll : pll2
     CLK_OUT1 => clk100mhz,
     CLK_OUT2 => Clk200mhz,
     -- Status and control signals
-    RESET  => SYSRST,
+    RESET  => '0',
     LOCKED => locked);
 
 

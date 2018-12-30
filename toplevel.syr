@@ -159,7 +159,7 @@ Synthesizing Unit <simple_counter>.
     Related source file is "/home/ise/testpano/simple_counter.vhd".
         NBIT = 26
     Found 26-bit register for signal <Qp>.
-    Found 26-bit adder for signal <Qp[25]_GND_11_o_mux_3_OUT> created at line 64.
+    Found 26-bit adder for signal <Qp[25]_GND_12_o_mux_3_OUT> created at line 64.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  26 D-type flip-flop(s).
@@ -203,12 +203,10 @@ Macro Statistics
 INFO:Xst:1901 - Instance clockpll/pll_base_inst in unit clockpll/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
 
 Optimizing unit <toplevel> ...
-INFO:Xst:3203 - The FF/Latch <SYSRST> in Unit <toplevel> is the opposite to the following FF/Latch, which will be removed : <RESET_OUT_N> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 0.
-FlipFlop SYSRST has been replicated 1 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
@@ -240,16 +238,17 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 81
+# BELS                             : 80
 #      GND                         : 1
-#      INV                         : 3
+#      INV                         : 2
 #      LUT1                        : 25
 #      MUXCY                       : 25
 #      VCC                         : 1
 #      XORCY                       : 26
 # FlipFlops/Latches                : 28
 #      FD                          : 26
-#      FDP                         : 2
+#      FDC                         : 1
+#      FDP                         : 1
 # Clock Buffers                    : 3
 #      BUFG                        : 3
 # IO Buffers                       : 6
@@ -266,21 +265,21 @@ Selected Device : 6slx150fgg484-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              27  out of  184304     0%  
- Number of Slice LUTs:                   28  out of  92152     0%  
-    Number used as Logic:                28  out of  92152     0%  
+ Number of Slice Registers:              26  out of  184304     0%  
+ Number of Slice LUTs:                   27  out of  92152     0%  
+    Number used as Logic:                27  out of  92152     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     29
-   Number with an unused Flip Flop:       2  out of     29     6%  
-   Number with an unused LUT:             1  out of     29     3%  
-   Number of fully used LUT-FF pairs:    26  out of     29    89%  
+ Number of LUT Flip Flop pairs used:     27
+   Number with an unused Flip Flop:       1  out of     27     3%  
+   Number with an unused LUT:             0  out of     27     0%  
+   Number of fully used LUT-FF pairs:    26  out of     27    96%  
    Number of unique control sets:         2
 
 IO Utilization: 
  Number of IOs:                           7
  Number of bonded IOBs:                   6  out of    338     1%  
-    IOB Flip Flops/Latches:               1
+    IOB Flip Flops/Latches:               2
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
@@ -320,7 +319,7 @@ Speed Grade: -2
 
    Minimum period: 2.514ns (Maximum Frequency: 397.772MHz)
    Minimum input arrival time before clock: 3.448ns
-   Maximum output required time after clock: 5.054ns
+   Maximum output required time after clock: 4.162ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -399,21 +398,20 @@ Offset:              3.448ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clockpll/pll_base_inst/CLKOUT0'
   Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Offset:              5.054ns (Levels of Logic = 2)
-  Source:            SYSRST (FF)
-  Destination:       RESET_OUT_N (PAD)
+Offset:              4.162ns (Levels of Logic = 1)
+  Source:            divider/Qp_25 (FF)
+  Destination:       led_red (PAD)
   Source Clock:      clockpll/pll_base_inst/CLKOUT0 rising
 
-  Data Path: SYSRST to RESET_OUT_N
+  Data Path: divider/Qp_25 to led_red
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDP:C->Q              1   0.525   0.681  SYSRST (led_green_OBUF)
-     INV:I->O              1   0.255   0.681  led_green_inv1_INV_0 (RESET_OUT_N_OBUF)
-     OBUF:I->O                 2.912          RESET_OUT_N_OBUF (RESET_OUT_N)
+     FD:C->Q               2   0.525   0.725  divider/Qp_25 (divider/Qp_25)
+     OBUF:I->O                 2.912          led_red_OBUF (led_red)
     ----------------------------------------
-    Total                      5.054ns (3.692ns logic, 1.362ns route)
-                                       (73.1% logic, 26.9% route)
+    Total                      4.162ns (3.437ns logic, 0.725ns route)
+                                       (82.6% logic, 17.4% route)
 
 =========================================================================
 
@@ -432,14 +430,14 @@ clockpll/pll_base_inst/CLKOUT0|    2.514|         |         |         |
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.39 secs
+Total CPU time to Xst completion: 6.89 secs
  
 --> 
 
 
-Total memory usage is 499500 kilobytes
+Total memory usage is 499504 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 

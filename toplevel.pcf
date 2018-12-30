@@ -1,12 +1,12 @@
 //! **************************************************************************
-// Written by: Map P.20160913 on Wed Dec 19 04:17:31 2018
+// Written by: Map P.20160913 on Sun Dec 30 00:06:59 2018
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "osc_clk" LOCATE = SITE "Y13" LEVEL 1;
+COMP "RESET_OUT_N" LOCATE = SITE "AA6" LEVEL 1;
 COMP "led_red" LOCATE = SITE "E12" LEVEL 1;
 COMP "SYSRST_N" LOCATE = SITE "AB14" LEVEL 1;
-COMP "RESET_OUT_N" LOCATE = SITE "AA6" LEVEL 1;
 COMP "pano_button" LOCATE = SITE "H12" LEVEL 1;
 COMP "led_green" LOCATE = SITE "F13" LEVEL 1;
 COMP "led_blue" LOCATE = SITE "H13" LEVEL 1;
