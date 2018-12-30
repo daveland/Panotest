@@ -46,7 +46,7 @@ end toplevel;
 
 architecture Behavioral of toplevel is
 
-signal  counter_output : std_logic_vector(25 downto 0);
+signal  counter_output : std_logic_vector(47 downto 0);
 signal  locked : std_logic;
 signal clk100mhz: std_logic;
 signal clk200mhz: std_logic;
@@ -82,19 +82,19 @@ clockpll : pll2
 
 
 divider : simple_counter
-	generic map(NBIT => 26)
+	generic map(NBIT =>48)
 	port map(
 			clk => clk100mhz,
 			resetn => '1',
 			sraz => '0',
 			en => '1',
 			load => '0',
-			E => "00000000000000000000000000" ,
+			E => "000000000000000000000000000000000000000000000000" ,
 			Q => counter_output
 			);
 			
-led_red <= counter_output(25);
-led_blue <= counter_output(24);
+led_red <= counter_output(36);
+led_blue <= counter_output(35);
 led_green <= SYSRST;
 
 
