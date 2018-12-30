@@ -67,19 +67,19 @@ Timing constraint: PERIOD analysis for net "clockpll/clkout0" derived from  NET
 "clockpll/clkin1" PERIOD = 40 ns HIGH 50%;  divided by 4.00 to 10 nS   
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 666 paths analyzed, 122 endpoints analyzed, 0 failing endpoints
+ 406 paths analyzed, 94 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
  Minimum period is   2.666ns.
 --------------------------------------------------------------------------------
 
-Paths for end point divider/Qp_34 (SLICE_X102Y139.CIN), 32 paths
+Paths for end point divider/Qp_26 (SLICE_X102Y163.CIN), 24 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     7.415ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.750ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_0 (FF)
-  Destination:          divider/Qp_34 (FF)
+  Destination:          divider/Qp_26 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.412ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.020ns (0.291 - 0.311)
+  Data Path Delay:      2.145ns (Levels of Logic = 7)
+  Clock Path Skew:      0.048ns (0.828 - 0.780)
   Source Clock:         clk100mhz rising at 0.000ns
   Destination Clock:    clk100mhz rising at 10.000ns
   Clock Uncertainty:    0.153ns
@@ -89,52 +89,46 @@ Slack (setup path):     7.415ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.297ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: divider/Qp_0 to divider/Qp_34
+  Maximum Data Path at Slow Process Corner: divider/Qp_0 to divider/Qp_26
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y131.AQ    Tcko                  0.476   divider/Qp<3>
+    SLICE_X102Y157.AQ    Tcko                  0.476   divider/Qp<3>
                                                        divider/Qp_0
-    SLICE_X102Y131.A5    net (fanout=1)        0.405   divider/Qp<0>
-    SLICE_X102Y131.COUT  Topcya                0.472   divider/Qp<3>
+    SLICE_X102Y157.A5    net (fanout=1)        0.405   divider/Qp<0>
+    SLICE_X102Y157.COUT  Topcya                0.472   divider/Qp<3>
                                                        divider/Mcount_Qp_lut<0>_INV_0
                                                        divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.COUT  Tbyp                  0.091   divider/Qp<7>
+    SLICE_X102Y158.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
+    SLICE_X102Y158.COUT  Tbyp                  0.091   divider/Qp<7>
                                                        divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.COUT  Tbyp                  0.091   divider/Qp<11>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.091   divider/Qp<11>
                                                        divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.COUT  Tbyp                  0.091   divider/Qp<15>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.COUT  Tbyp                  0.091   divider/Qp<15>
                                                        divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.COUT  Tbyp                  0.091   divider/Qp<19>
+    SLICE_X102Y161.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
+    SLICE_X102Y161.COUT  Tbyp                  0.091   divider/Qp<19>
                                                        divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.CIN   net (fanout=1)        0.082   divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.COUT  Tbyp                  0.091   divider/Qp<23>
+    SLICE_X102Y162.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<19>
+    SLICE_X102Y162.COUT  Tbyp                  0.091   divider/Qp<23>
                                                        divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.COUT  Tbyp                  0.091   divider/Qp<27>
-                                                       divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.COUT  Tbyp                  0.091   divider/Qp<31>
-                                                       divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CLK   Tcinck                0.319   divider/Qp<35>
-                                                       divider/Mcount_Qp_xor<35>
-                                                       divider/Qp_34
+    SLICE_X102Y163.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
+    SLICE_X102Y163.CLK   Tcinck                0.319   divider/Qp<27>
+                                                       divider/Mcount_Qp_xor<27>
+                                                       divider/Qp_26
     -------------------------------------------------  ---------------------------
-    Total                                      2.412ns (1.904ns logic, 0.508ns route)
-                                                       (78.9% logic, 21.1% route)
+    Total                                      2.145ns (1.722ns logic, 0.423ns route)
+                                                       (80.3% logic, 19.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.511ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.843ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_4 (FF)
-  Destination:          divider/Qp_34 (FF)
+  Destination:          divider/Qp_26 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.318ns (Levels of Logic = 8)
-  Clock Path Skew:      -0.018ns (0.291 - 0.309)
+  Data Path Delay:      2.051ns (Levels of Logic = 6)
+  Clock Path Skew:      0.047ns (0.828 - 0.781)
   Source Clock:         clk100mhz rising at 0.000ns
   Destination Clock:    clk100mhz rising at 10.000ns
   Clock Uncertainty:    0.153ns
@@ -144,49 +138,43 @@ Slack (setup path):     7.511ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.297ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: divider/Qp_4 to divider/Qp_34
+  Maximum Data Path at Slow Process Corner: divider/Qp_4 to divider/Qp_26
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y132.AQ    Tcko                  0.476   divider/Qp<7>
+    SLICE_X102Y158.AQ    Tcko                  0.476   divider/Qp<7>
                                                        divider/Qp_4
-    SLICE_X102Y132.A5    net (fanout=1)        0.405   divider/Qp<4>
-    SLICE_X102Y132.COUT  Topcya                0.472   divider/Qp<7>
+    SLICE_X102Y158.A5    net (fanout=1)        0.405   divider/Qp<4>
+    SLICE_X102Y158.COUT  Topcya                0.472   divider/Qp<7>
                                                        divider/Qp<4>_rt
                                                        divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.COUT  Tbyp                  0.091   divider/Qp<11>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.091   divider/Qp<11>
                                                        divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.COUT  Tbyp                  0.091   divider/Qp<15>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.COUT  Tbyp                  0.091   divider/Qp<15>
                                                        divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.COUT  Tbyp                  0.091   divider/Qp<19>
+    SLICE_X102Y161.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
+    SLICE_X102Y161.COUT  Tbyp                  0.091   divider/Qp<19>
                                                        divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.CIN   net (fanout=1)        0.082   divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.COUT  Tbyp                  0.091   divider/Qp<23>
+    SLICE_X102Y162.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<19>
+    SLICE_X102Y162.COUT  Tbyp                  0.091   divider/Qp<23>
                                                        divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.COUT  Tbyp                  0.091   divider/Qp<27>
-                                                       divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.COUT  Tbyp                  0.091   divider/Qp<31>
-                                                       divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CLK   Tcinck                0.319   divider/Qp<35>
-                                                       divider/Mcount_Qp_xor<35>
-                                                       divider/Qp_34
+    SLICE_X102Y163.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
+    SLICE_X102Y163.CLK   Tcinck                0.319   divider/Qp<27>
+                                                       divider/Mcount_Qp_xor<27>
+                                                       divider/Qp_26
     -------------------------------------------------  ---------------------------
-    Total                                      2.318ns (1.813ns logic, 0.505ns route)
-                                                       (78.2% logic, 21.8% route)
+    Total                                      2.051ns (1.631ns logic, 0.420ns route)
+                                                       (79.5% logic, 20.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.542ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.877ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_3 (FF)
-  Destination:          divider/Qp_34 (FF)
+  Destination:          divider/Qp_26 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.285ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.020ns (0.291 - 0.311)
+  Data Path Delay:      2.018ns (Levels of Logic = 7)
+  Clock Path Skew:      0.048ns (0.828 - 0.780)
   Source Clock:         clk100mhz rising at 0.000ns
   Destination Clock:    clk100mhz rising at 10.000ns
   Clock Uncertainty:    0.153ns
@@ -196,55 +184,49 @@ Slack (setup path):     7.542ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.297ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: divider/Qp_3 to divider/Qp_34
+  Maximum Data Path at Slow Process Corner: divider/Qp_3 to divider/Qp_26
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y131.DQ    Tcko                  0.476   divider/Qp<3>
+    SLICE_X102Y157.DQ    Tcko                  0.476   divider/Qp<3>
                                                        divider/Qp_3
-    SLICE_X102Y131.D5    net (fanout=1)        0.460   divider/Qp<3>
-    SLICE_X102Y131.COUT  Topcyd                0.290   divider/Qp<3>
+    SLICE_X102Y157.D5    net (fanout=1)        0.460   divider/Qp<3>
+    SLICE_X102Y157.COUT  Topcyd                0.290   divider/Qp<3>
                                                        divider/Qp<3>_rt
                                                        divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.COUT  Tbyp                  0.091   divider/Qp<7>
+    SLICE_X102Y158.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
+    SLICE_X102Y158.COUT  Tbyp                  0.091   divider/Qp<7>
                                                        divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.COUT  Tbyp                  0.091   divider/Qp<11>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.091   divider/Qp<11>
                                                        divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.COUT  Tbyp                  0.091   divider/Qp<15>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.COUT  Tbyp                  0.091   divider/Qp<15>
                                                        divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.COUT  Tbyp                  0.091   divider/Qp<19>
+    SLICE_X102Y161.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
+    SLICE_X102Y161.COUT  Tbyp                  0.091   divider/Qp<19>
                                                        divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.CIN   net (fanout=1)        0.082   divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.COUT  Tbyp                  0.091   divider/Qp<23>
+    SLICE_X102Y162.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<19>
+    SLICE_X102Y162.COUT  Tbyp                  0.091   divider/Qp<23>
                                                        divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.COUT  Tbyp                  0.091   divider/Qp<27>
-                                                       divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.COUT  Tbyp                  0.091   divider/Qp<31>
-                                                       divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CLK   Tcinck                0.319   divider/Qp<35>
-                                                       divider/Mcount_Qp_xor<35>
-                                                       divider/Qp_34
+    SLICE_X102Y163.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
+    SLICE_X102Y163.CLK   Tcinck                0.319   divider/Qp<27>
+                                                       divider/Mcount_Qp_xor<27>
+                                                       divider/Qp_26
     -------------------------------------------------  ---------------------------
-    Total                                      2.285ns (1.722ns logic, 0.563ns route)
-                                                       (75.4% logic, 24.6% route)
+    Total                                      2.018ns (1.540ns logic, 0.478ns route)
+                                                       (76.3% logic, 23.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point divider/Qp_35 (SLICE_X102Y139.CIN), 32 paths
+Paths for end point divider/Qp_27 (SLICE_X102Y163.CIN), 24 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     7.415ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.750ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_0 (FF)
-  Destination:          divider/Qp_35 (FF)
+  Destination:          divider/Qp_27 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.412ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.020ns (0.291 - 0.311)
+  Data Path Delay:      2.145ns (Levels of Logic = 7)
+  Clock Path Skew:      0.048ns (0.828 - 0.780)
   Source Clock:         clk100mhz rising at 0.000ns
   Destination Clock:    clk100mhz rising at 10.000ns
   Clock Uncertainty:    0.153ns
@@ -254,52 +236,46 @@ Slack (setup path):     7.415ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.297ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: divider/Qp_0 to divider/Qp_35
+  Maximum Data Path at Slow Process Corner: divider/Qp_0 to divider/Qp_27
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y131.AQ    Tcko                  0.476   divider/Qp<3>
+    SLICE_X102Y157.AQ    Tcko                  0.476   divider/Qp<3>
                                                        divider/Qp_0
-    SLICE_X102Y131.A5    net (fanout=1)        0.405   divider/Qp<0>
-    SLICE_X102Y131.COUT  Topcya                0.472   divider/Qp<3>
+    SLICE_X102Y157.A5    net (fanout=1)        0.405   divider/Qp<0>
+    SLICE_X102Y157.COUT  Topcya                0.472   divider/Qp<3>
                                                        divider/Mcount_Qp_lut<0>_INV_0
                                                        divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.COUT  Tbyp                  0.091   divider/Qp<7>
+    SLICE_X102Y158.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
+    SLICE_X102Y158.COUT  Tbyp                  0.091   divider/Qp<7>
                                                        divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.COUT  Tbyp                  0.091   divider/Qp<11>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.091   divider/Qp<11>
                                                        divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.COUT  Tbyp                  0.091   divider/Qp<15>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.COUT  Tbyp                  0.091   divider/Qp<15>
                                                        divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.COUT  Tbyp                  0.091   divider/Qp<19>
+    SLICE_X102Y161.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
+    SLICE_X102Y161.COUT  Tbyp                  0.091   divider/Qp<19>
                                                        divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.CIN   net (fanout=1)        0.082   divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.COUT  Tbyp                  0.091   divider/Qp<23>
+    SLICE_X102Y162.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<19>
+    SLICE_X102Y162.COUT  Tbyp                  0.091   divider/Qp<23>
                                                        divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.COUT  Tbyp                  0.091   divider/Qp<27>
-                                                       divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.COUT  Tbyp                  0.091   divider/Qp<31>
-                                                       divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CLK   Tcinck                0.319   divider/Qp<35>
-                                                       divider/Mcount_Qp_xor<35>
-                                                       divider/Qp_35
+    SLICE_X102Y163.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
+    SLICE_X102Y163.CLK   Tcinck                0.319   divider/Qp<27>
+                                                       divider/Mcount_Qp_xor<27>
+                                                       divider/Qp_27
     -------------------------------------------------  ---------------------------
-    Total                                      2.412ns (1.904ns logic, 0.508ns route)
-                                                       (78.9% logic, 21.1% route)
+    Total                                      2.145ns (1.722ns logic, 0.423ns route)
+                                                       (80.3% logic, 19.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.511ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.843ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_4 (FF)
-  Destination:          divider/Qp_35 (FF)
+  Destination:          divider/Qp_27 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.318ns (Levels of Logic = 8)
-  Clock Path Skew:      -0.018ns (0.291 - 0.309)
+  Data Path Delay:      2.051ns (Levels of Logic = 6)
+  Clock Path Skew:      0.047ns (0.828 - 0.781)
   Source Clock:         clk100mhz rising at 0.000ns
   Destination Clock:    clk100mhz rising at 10.000ns
   Clock Uncertainty:    0.153ns
@@ -309,49 +285,43 @@ Slack (setup path):     7.511ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.297ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: divider/Qp_4 to divider/Qp_35
+  Maximum Data Path at Slow Process Corner: divider/Qp_4 to divider/Qp_27
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y132.AQ    Tcko                  0.476   divider/Qp<7>
+    SLICE_X102Y158.AQ    Tcko                  0.476   divider/Qp<7>
                                                        divider/Qp_4
-    SLICE_X102Y132.A5    net (fanout=1)        0.405   divider/Qp<4>
-    SLICE_X102Y132.COUT  Topcya                0.472   divider/Qp<7>
+    SLICE_X102Y158.A5    net (fanout=1)        0.405   divider/Qp<4>
+    SLICE_X102Y158.COUT  Topcya                0.472   divider/Qp<7>
                                                        divider/Qp<4>_rt
                                                        divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.COUT  Tbyp                  0.091   divider/Qp<11>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.091   divider/Qp<11>
                                                        divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.COUT  Tbyp                  0.091   divider/Qp<15>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.COUT  Tbyp                  0.091   divider/Qp<15>
                                                        divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.COUT  Tbyp                  0.091   divider/Qp<19>
+    SLICE_X102Y161.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
+    SLICE_X102Y161.COUT  Tbyp                  0.091   divider/Qp<19>
                                                        divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.CIN   net (fanout=1)        0.082   divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.COUT  Tbyp                  0.091   divider/Qp<23>
+    SLICE_X102Y162.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<19>
+    SLICE_X102Y162.COUT  Tbyp                  0.091   divider/Qp<23>
                                                        divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.COUT  Tbyp                  0.091   divider/Qp<27>
-                                                       divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.COUT  Tbyp                  0.091   divider/Qp<31>
-                                                       divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CLK   Tcinck                0.319   divider/Qp<35>
-                                                       divider/Mcount_Qp_xor<35>
-                                                       divider/Qp_35
+    SLICE_X102Y163.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
+    SLICE_X102Y163.CLK   Tcinck                0.319   divider/Qp<27>
+                                                       divider/Mcount_Qp_xor<27>
+                                                       divider/Qp_27
     -------------------------------------------------  ---------------------------
-    Total                                      2.318ns (1.813ns logic, 0.505ns route)
-                                                       (78.2% logic, 21.8% route)
+    Total                                      2.051ns (1.631ns logic, 0.420ns route)
+                                                       (79.5% logic, 20.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.542ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.877ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_3 (FF)
-  Destination:          divider/Qp_35 (FF)
+  Destination:          divider/Qp_27 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.285ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.020ns (0.291 - 0.311)
+  Data Path Delay:      2.018ns (Levels of Logic = 7)
+  Clock Path Skew:      0.048ns (0.828 - 0.780)
   Source Clock:         clk100mhz rising at 0.000ns
   Destination Clock:    clk100mhz rising at 10.000ns
   Clock Uncertainty:    0.153ns
@@ -361,55 +331,49 @@ Slack (setup path):     7.542ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.297ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: divider/Qp_3 to divider/Qp_35
+  Maximum Data Path at Slow Process Corner: divider/Qp_3 to divider/Qp_27
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y131.DQ    Tcko                  0.476   divider/Qp<3>
+    SLICE_X102Y157.DQ    Tcko                  0.476   divider/Qp<3>
                                                        divider/Qp_3
-    SLICE_X102Y131.D5    net (fanout=1)        0.460   divider/Qp<3>
-    SLICE_X102Y131.COUT  Topcyd                0.290   divider/Qp<3>
+    SLICE_X102Y157.D5    net (fanout=1)        0.460   divider/Qp<3>
+    SLICE_X102Y157.COUT  Topcyd                0.290   divider/Qp<3>
                                                        divider/Qp<3>_rt
                                                        divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.COUT  Tbyp                  0.091   divider/Qp<7>
+    SLICE_X102Y158.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
+    SLICE_X102Y158.COUT  Tbyp                  0.091   divider/Qp<7>
                                                        divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.COUT  Tbyp                  0.091   divider/Qp<11>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.091   divider/Qp<11>
                                                        divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.COUT  Tbyp                  0.091   divider/Qp<15>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.COUT  Tbyp                  0.091   divider/Qp<15>
                                                        divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.COUT  Tbyp                  0.091   divider/Qp<19>
+    SLICE_X102Y161.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
+    SLICE_X102Y161.COUT  Tbyp                  0.091   divider/Qp<19>
                                                        divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.CIN   net (fanout=1)        0.082   divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.COUT  Tbyp                  0.091   divider/Qp<23>
+    SLICE_X102Y162.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<19>
+    SLICE_X102Y162.COUT  Tbyp                  0.091   divider/Qp<23>
                                                        divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.COUT  Tbyp                  0.091   divider/Qp<27>
-                                                       divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.COUT  Tbyp                  0.091   divider/Qp<31>
-                                                       divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CLK   Tcinck                0.319   divider/Qp<35>
-                                                       divider/Mcount_Qp_xor<35>
-                                                       divider/Qp_35
+    SLICE_X102Y163.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
+    SLICE_X102Y163.CLK   Tcinck                0.319   divider/Qp<27>
+                                                       divider/Mcount_Qp_xor<27>
+                                                       divider/Qp_27
     -------------------------------------------------  ---------------------------
-    Total                                      2.285ns (1.722ns logic, 0.563ns route)
-                                                       (75.4% logic, 24.6% route)
+    Total                                      2.018ns (1.540ns logic, 0.478ns route)
+                                                       (76.3% logic, 23.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point divider/Qp_33 (SLICE_X102Y139.CIN), 32 paths
+Paths for end point divider/Qp_25 (SLICE_X102Y163.CIN), 24 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     7.427ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.762ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_0 (FF)
-  Destination:          divider/Qp_33 (FF)
+  Destination:          divider/Qp_25 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.400ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.020ns (0.291 - 0.311)
+  Data Path Delay:      2.133ns (Levels of Logic = 7)
+  Clock Path Skew:      0.048ns (0.828 - 0.780)
   Source Clock:         clk100mhz rising at 0.000ns
   Destination Clock:    clk100mhz rising at 10.000ns
   Clock Uncertainty:    0.153ns
@@ -419,52 +383,46 @@ Slack (setup path):     7.427ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.297ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: divider/Qp_0 to divider/Qp_33
+  Maximum Data Path at Slow Process Corner: divider/Qp_0 to divider/Qp_25
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y131.AQ    Tcko                  0.476   divider/Qp<3>
+    SLICE_X102Y157.AQ    Tcko                  0.476   divider/Qp<3>
                                                        divider/Qp_0
-    SLICE_X102Y131.A5    net (fanout=1)        0.405   divider/Qp<0>
-    SLICE_X102Y131.COUT  Topcya                0.472   divider/Qp<3>
+    SLICE_X102Y157.A5    net (fanout=1)        0.405   divider/Qp<0>
+    SLICE_X102Y157.COUT  Topcya                0.472   divider/Qp<3>
                                                        divider/Mcount_Qp_lut<0>_INV_0
                                                        divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.COUT  Tbyp                  0.091   divider/Qp<7>
+    SLICE_X102Y158.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
+    SLICE_X102Y158.COUT  Tbyp                  0.091   divider/Qp<7>
                                                        divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.COUT  Tbyp                  0.091   divider/Qp<11>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.091   divider/Qp<11>
                                                        divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.COUT  Tbyp                  0.091   divider/Qp<15>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.COUT  Tbyp                  0.091   divider/Qp<15>
                                                        divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.COUT  Tbyp                  0.091   divider/Qp<19>
+    SLICE_X102Y161.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
+    SLICE_X102Y161.COUT  Tbyp                  0.091   divider/Qp<19>
                                                        divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.CIN   net (fanout=1)        0.082   divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.COUT  Tbyp                  0.091   divider/Qp<23>
+    SLICE_X102Y162.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<19>
+    SLICE_X102Y162.COUT  Tbyp                  0.091   divider/Qp<23>
                                                        divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.COUT  Tbyp                  0.091   divider/Qp<27>
-                                                       divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.COUT  Tbyp                  0.091   divider/Qp<31>
-                                                       divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CLK   Tcinck                0.307   divider/Qp<35>
-                                                       divider/Mcount_Qp_xor<35>
-                                                       divider/Qp_33
+    SLICE_X102Y163.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
+    SLICE_X102Y163.CLK   Tcinck                0.307   divider/Qp<27>
+                                                       divider/Mcount_Qp_xor<27>
+                                                       divider/Qp_25
     -------------------------------------------------  ---------------------------
-    Total                                      2.400ns (1.892ns logic, 0.508ns route)
-                                                       (78.8% logic, 21.2% route)
+    Total                                      2.133ns (1.710ns logic, 0.423ns route)
+                                                       (80.2% logic, 19.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.523ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.855ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_4 (FF)
-  Destination:          divider/Qp_33 (FF)
+  Destination:          divider/Qp_25 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.306ns (Levels of Logic = 8)
-  Clock Path Skew:      -0.018ns (0.291 - 0.309)
+  Data Path Delay:      2.039ns (Levels of Logic = 6)
+  Clock Path Skew:      0.047ns (0.828 - 0.781)
   Source Clock:         clk100mhz rising at 0.000ns
   Destination Clock:    clk100mhz rising at 10.000ns
   Clock Uncertainty:    0.153ns
@@ -474,49 +432,43 @@ Slack (setup path):     7.523ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.297ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: divider/Qp_4 to divider/Qp_33
+  Maximum Data Path at Slow Process Corner: divider/Qp_4 to divider/Qp_25
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y132.AQ    Tcko                  0.476   divider/Qp<7>
+    SLICE_X102Y158.AQ    Tcko                  0.476   divider/Qp<7>
                                                        divider/Qp_4
-    SLICE_X102Y132.A5    net (fanout=1)        0.405   divider/Qp<4>
-    SLICE_X102Y132.COUT  Topcya                0.472   divider/Qp<7>
+    SLICE_X102Y158.A5    net (fanout=1)        0.405   divider/Qp<4>
+    SLICE_X102Y158.COUT  Topcya                0.472   divider/Qp<7>
                                                        divider/Qp<4>_rt
                                                        divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.COUT  Tbyp                  0.091   divider/Qp<11>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.091   divider/Qp<11>
                                                        divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.COUT  Tbyp                  0.091   divider/Qp<15>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.COUT  Tbyp                  0.091   divider/Qp<15>
                                                        divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.COUT  Tbyp                  0.091   divider/Qp<19>
+    SLICE_X102Y161.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
+    SLICE_X102Y161.COUT  Tbyp                  0.091   divider/Qp<19>
                                                        divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.CIN   net (fanout=1)        0.082   divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.COUT  Tbyp                  0.091   divider/Qp<23>
+    SLICE_X102Y162.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<19>
+    SLICE_X102Y162.COUT  Tbyp                  0.091   divider/Qp<23>
                                                        divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.COUT  Tbyp                  0.091   divider/Qp<27>
-                                                       divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.COUT  Tbyp                  0.091   divider/Qp<31>
-                                                       divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CLK   Tcinck                0.307   divider/Qp<35>
-                                                       divider/Mcount_Qp_xor<35>
-                                                       divider/Qp_33
+    SLICE_X102Y163.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
+    SLICE_X102Y163.CLK   Tcinck                0.307   divider/Qp<27>
+                                                       divider/Mcount_Qp_xor<27>
+                                                       divider/Qp_25
     -------------------------------------------------  ---------------------------
-    Total                                      2.306ns (1.801ns logic, 0.505ns route)
-                                                       (78.1% logic, 21.9% route)
+    Total                                      2.039ns (1.619ns logic, 0.420ns route)
+                                                       (79.4% logic, 20.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.554ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.889ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_3 (FF)
-  Destination:          divider/Qp_33 (FF)
+  Destination:          divider/Qp_25 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.273ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.020ns (0.291 - 0.311)
+  Data Path Delay:      2.006ns (Levels of Logic = 7)
+  Clock Path Skew:      0.048ns (0.828 - 0.780)
   Source Clock:         clk100mhz rising at 0.000ns
   Destination Clock:    clk100mhz rising at 10.000ns
   Clock Uncertainty:    0.153ns
@@ -526,44 +478,38 @@ Slack (setup path):     7.554ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.297ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: divider/Qp_3 to divider/Qp_33
+  Maximum Data Path at Slow Process Corner: divider/Qp_3 to divider/Qp_25
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y131.DQ    Tcko                  0.476   divider/Qp<3>
+    SLICE_X102Y157.DQ    Tcko                  0.476   divider/Qp<3>
                                                        divider/Qp_3
-    SLICE_X102Y131.D5    net (fanout=1)        0.460   divider/Qp<3>
-    SLICE_X102Y131.COUT  Topcyd                0.290   divider/Qp<3>
+    SLICE_X102Y157.D5    net (fanout=1)        0.460   divider/Qp<3>
+    SLICE_X102Y157.COUT  Topcyd                0.290   divider/Qp<3>
                                                        divider/Qp<3>_rt
                                                        divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
-    SLICE_X102Y132.COUT  Tbyp                  0.091   divider/Qp<7>
+    SLICE_X102Y158.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<3>
+    SLICE_X102Y158.COUT  Tbyp                  0.091   divider/Qp<7>
                                                        divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
-    SLICE_X102Y133.COUT  Tbyp                  0.091   divider/Qp<11>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.091   divider/Qp<11>
                                                        divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
-    SLICE_X102Y134.COUT  Tbyp                  0.091   divider/Qp<15>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.COUT  Tbyp                  0.091   divider/Qp<15>
                                                        divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
-    SLICE_X102Y135.COUT  Tbyp                  0.091   divider/Qp<19>
+    SLICE_X102Y161.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<15>
+    SLICE_X102Y161.COUT  Tbyp                  0.091   divider/Qp<19>
                                                        divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.CIN   net (fanout=1)        0.082   divider/Mcount_Qp_cy<19>
-    SLICE_X102Y136.COUT  Tbyp                  0.091   divider/Qp<23>
+    SLICE_X102Y162.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<19>
+    SLICE_X102Y162.COUT  Tbyp                  0.091   divider/Qp<23>
                                                        divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
-    SLICE_X102Y137.COUT  Tbyp                  0.091   divider/Qp<27>
-                                                       divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<27>
-    SLICE_X102Y138.COUT  Tbyp                  0.091   divider/Qp<31>
-                                                       divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<31>
-    SLICE_X102Y139.CLK   Tcinck                0.307   divider/Qp<35>
-                                                       divider/Mcount_Qp_xor<35>
-                                                       divider/Qp_33
+    SLICE_X102Y163.CIN   net (fanout=1)        0.003   divider/Mcount_Qp_cy<23>
+    SLICE_X102Y163.CLK   Tcinck                0.307   divider/Qp<27>
+                                                       divider/Mcount_Qp_xor<27>
+                                                       divider/Qp_25
     -------------------------------------------------  ---------------------------
-    Total                                      2.273ns (1.710ns logic, 0.563ns route)
-                                                       (75.2% logic, 24.8% route)
+    Total                                      2.006ns (1.528ns logic, 0.478ns route)
+                                                       (76.2% logic, 23.8% route)
 
 --------------------------------------------------------------------------------
 
@@ -573,11 +519,11 @@ Hold Paths: PERIOD analysis for net "clockpll/clkout0" derived from
 
 --------------------------------------------------------------------------------
 
-Paths for end point divider/Qp_35 (SLICE_X102Y139.D6), 1 path
+Paths for end point divider/Qp_27 (SLICE_X102Y163.D6), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.464ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               divider/Qp_35 (FF)
-  Destination:          divider/Qp_35 (FF)
+  Source:               divider/Qp_27 (FF)
+  Destination:          divider/Qp_27 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.464ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
@@ -585,24 +531,123 @@ Slack (hold path):      0.464ns (requirement - (clock path skew + uncertainty - 
   Destination Clock:    clk100mhz rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: divider/Qp_35 to divider/Qp_35
+  Minimum Data Path at Fast Process Corner: divider/Qp_27 to divider/Qp_27
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y139.DQ    Tcko                  0.200   divider/Qp<35>
-                                                       divider/Qp_35
-    SLICE_X102Y139.D6    net (fanout=2)        0.027   divider/Qp<35>
-    SLICE_X102Y139.CLK   Tah         (-Th)    -0.237   divider/Qp<35>
-                                                       divider/Qp<35>_rt
-                                                       divider/Mcount_Qp_xor<35>
-                                                       divider/Qp_35
+    SLICE_X102Y163.DQ    Tcko                  0.200   divider/Qp<27>
+                                                       divider/Qp_27
+    SLICE_X102Y163.D6    net (fanout=2)        0.027   divider/Qp<27>
+    SLICE_X102Y163.CLK   Tah         (-Th)    -0.237   divider/Qp<27>
+                                                       divider/Qp<27>_rt
+                                                       divider/Mcount_Qp_xor<27>
+                                                       divider/Qp_27
     -------------------------------------------------  ---------------------------
     Total                                      0.464ns (0.437ns logic, 0.027ns route)
                                                        (94.2% logic, 5.8% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point divider/Qp_1 (SLICE_X102Y131.B5), 1 path
+Paths for end point divider/Qp_12 (SLICE_X102Y160.CIN), 12 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      0.487ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               divider/Qp_10 (FF)
+  Destination:          divider/Qp_12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.578ns (Levels of Logic = 2)
+  Clock Path Skew:      0.091ns (0.435 - 0.344)
+  Source Clock:         clk100mhz rising at 10.000ns
+  Destination Clock:    clk100mhz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: divider/Qp_10 to divider/Qp_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X102Y159.CQ    Tcko                  0.200   divider/Qp<11>
+                                                       divider/Qp_10
+    SLICE_X102Y159.C5    net (fanout=1)        0.061   divider/Qp<10>
+    SLICE_X102Y159.COUT  Topcyc                0.195   divider/Qp<11>
+                                                       divider/Qp<10>_rt
+                                                       divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.001   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.CLK   Tckcin      (-Th)    -0.121   divider/Qp<15>
+                                                       divider/Mcount_Qp_cy<15>
+                                                       divider/Qp_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.578ns (0.516ns logic, 0.062ns route)
+                                                       (89.3% logic, 10.7% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.519ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               divider/Qp_6 (FF)
+  Destination:          divider/Qp_12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.611ns (Levels of Logic = 3)
+  Clock Path Skew:      0.092ns (0.435 - 0.343)
+  Source Clock:         clk100mhz rising at 10.000ns
+  Destination Clock:    clk100mhz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: divider/Qp_6 to divider/Qp_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X102Y158.CQ    Tcko                  0.200   divider/Qp<7>
+                                                       divider/Qp_6
+    SLICE_X102Y158.C5    net (fanout=1)        0.061   divider/Qp<6>
+    SLICE_X102Y158.COUT  Topcyc                0.195   divider/Qp<7>
+                                                       divider/Qp<6>_rt
+                                                       divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.001   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.032   divider/Qp<11>
+                                                       divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.001   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.CLK   Tckcin      (-Th)    -0.121   divider/Qp<15>
+                                                       divider/Mcount_Qp_cy<15>
+                                                       divider/Qp_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.611ns (0.548ns logic, 0.063ns route)
+                                                       (89.7% logic, 10.3% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      0.551ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               divider/Qp_2 (FF)
+  Destination:          divider/Qp_12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.644ns (Levels of Logic = 4)
+  Clock Path Skew:      0.093ns (0.435 - 0.342)
+  Source Clock:         clk100mhz rising at 10.000ns
+  Destination Clock:    clk100mhz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: divider/Qp_2 to divider/Qp_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X102Y157.CQ    Tcko                  0.200   divider/Qp<3>
+                                                       divider/Qp_2
+    SLICE_X102Y157.C5    net (fanout=1)        0.061   divider/Qp<2>
+    SLICE_X102Y157.COUT  Topcyc                0.195   divider/Qp<3>
+                                                       divider/Qp<2>_rt
+                                                       divider/Mcount_Qp_cy<3>
+    SLICE_X102Y158.CIN   net (fanout=1)        0.001   divider/Mcount_Qp_cy<3>
+    SLICE_X102Y158.COUT  Tbyp                  0.032   divider/Qp<7>
+                                                       divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.CIN   net (fanout=1)        0.001   divider/Mcount_Qp_cy<7>
+    SLICE_X102Y159.COUT  Tbyp                  0.032   divider/Qp<11>
+                                                       divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.CIN   net (fanout=1)        0.001   divider/Mcount_Qp_cy<11>
+    SLICE_X102Y160.CLK   Tckcin      (-Th)    -0.121   divider/Qp<15>
+                                                       divider/Mcount_Qp_cy<15>
+                                                       divider/Qp_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.644ns (0.580ns logic, 0.064ns route)
+                                                       (90.1% logic, 9.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point divider/Qp_1 (SLICE_X102Y157.B5), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.505ns (requirement - (clock path skew + uncertainty - data path))
   Source:               divider/Qp_1 (FF)
@@ -618,42 +663,13 @@ Slack (hold path):      0.505ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X102Y131.BQ    Tcko                  0.200   divider/Qp<3>
+    SLICE_X102Y157.BQ    Tcko                  0.200   divider/Qp<3>
                                                        divider/Qp_1
-    SLICE_X102Y131.B5    net (fanout=1)        0.071   divider/Qp<1>
-    SLICE_X102Y131.CLK   Tah         (-Th)    -0.234   divider/Qp<3>
+    SLICE_X102Y157.B5    net (fanout=1)        0.071   divider/Qp<1>
+    SLICE_X102Y157.CLK   Tah         (-Th)    -0.234   divider/Qp<3>
                                                        divider/Qp<1>_rt
                                                        divider/Mcount_Qp_cy<3>
                                                        divider/Qp_1
-    -------------------------------------------------  ---------------------------
-    Total                                      0.505ns (0.434ns logic, 0.071ns route)
-                                                       (85.9% logic, 14.1% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point divider/Qp_5 (SLICE_X102Y132.B5), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.505ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               divider/Qp_5 (FF)
-  Destination:          divider/Qp_5 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.505ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk100mhz rising at 10.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: divider/Qp_5 to divider/Qp_5
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X102Y132.BQ    Tcko                  0.200   divider/Qp<7>
-                                                       divider/Qp_5
-    SLICE_X102Y132.B5    net (fanout=1)        0.071   divider/Qp<5>
-    SLICE_X102Y132.CLK   Tah         (-Th)    -0.234   divider/Qp<7>
-                                                       divider/Qp<5>_rt
-                                                       divider/Mcount_Qp_cy<7>
-                                                       divider/Qp_5
     -------------------------------------------------  ---------------------------
     Total                                      0.505ns (0.434ns logic, 0.071ns route)
                                                        (85.9% logic, 14.1% route)
@@ -686,7 +702,7 @@ Slack: 9.525ns (period - min period limit)
   Min period limit: 0.475ns (2105.263MHz) (Tcp)
   Physical resource: divider/Qp<3>/CLK
   Logical resource: divider/Qp_0/CK
-  Location pin: SLICE_X102Y131.CLK
+  Location pin: SLICE_X102Y157.CLK
   Clock network: clk100mhz
 --------------------------------------------------------------------------------
 
@@ -752,7 +768,7 @@ Slack: 9.525ns (period - min period limit)
   Min period limit: 0.475ns (2105.263MHz) (Tcp)
   Physical resource: divider/Qp<3>/CLK
   Logical resource: divider/Qp_0/CK
-  Location pin: SLICE_X102Y131.CLK
+  Location pin: SLICE_X102Y157.CLK
   Clock network: clk100mhz
 --------------------------------------------------------------------------------
 Slack: 9.525ns (period - min period limit)
@@ -760,7 +776,7 @@ Slack: 9.525ns (period - min period limit)
   Min period limit: 0.475ns (2105.263MHz) (Tcp)
   Physical resource: divider/Qp<3>/CLK
   Logical resource: divider/Qp_1/CK
-  Location pin: SLICE_X102Y131.CLK
+  Location pin: SLICE_X102Y157.CLK
   Clock network: clk100mhz
 --------------------------------------------------------------------------------
 
@@ -772,8 +788,8 @@ Derived Constraints for clockpll/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|clockpll/clkin1                |     40.000ns|     10.000ns|     10.664ns|            0|            0|            0|          666|
-| clockpll/clkout0              |     10.000ns|      2.666ns|          N/A|            0|            0|          666|            0|
+|clockpll/clkin1                |     40.000ns|     10.000ns|     10.664ns|            0|            0|            0|          406|
+| clockpll/clkout0              |     10.000ns|      2.666ns|          N/A|            0|            0|          406|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 Derived Constraints for TS_PER_FREQIN
@@ -798,7 +814,7 @@ Clock to Setup on destination clock osc_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-osc_clk        |    2.585|         |         |         |
+osc_clk        |    2.250|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -807,7 +823,7 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 666 paths, 0 nets, and 59 connections
+Constraints cover 406 paths, 0 nets, and 47 connections
 
 Design statistics:
    Minimum period:  10.000ns{1}   (Maximum frequency: 100.000MHz)
@@ -816,7 +832,7 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Sun Dec 30 03:31:45 2018 
+Analysis completed Sun Dec 30 03:39:00 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:

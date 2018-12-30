@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20160913 on Sun Dec 30 03:31:04 2018
+// Written by: Map P.20160913 on Sun Dec 30 03:38:19 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -19,10 +19,7 @@ TIMEGRP clockpll_clkout0 = BEL "divider/Qp_0" BEL "divider/Qp_1" BEL
         "divider/Qp_17" BEL "divider/Qp_18" BEL "divider/Qp_19" BEL
         "divider/Qp_20" BEL "divider/Qp_21" BEL "divider/Qp_22" BEL
         "divider/Qp_23" BEL "divider/Qp_24" BEL "divider/Qp_25" BEL
-        "divider/Qp_26" BEL "divider/Qp_27" BEL "divider/Qp_28" BEL
-        "divider/Qp_29" BEL "divider/Qp_30" BEL "divider/Qp_31" BEL
-        "divider/Qp_32" BEL "divider/Qp_33" BEL "divider/Qp_34" BEL
-        "divider/Qp_35" BEL "clockpll/clkout1_buf";
+        "divider/Qp_26" BEL "divider/Qp_27" BEL "clockpll/clkout1_buf";
 PIN SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0_pins<0> = BEL
         "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0" PINNAME DIVCLK;
 PIN clockpll/pll_base_inst/PLL_ADV_pins<2> = BEL

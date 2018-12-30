@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: toplevel.prj
@@ -196,6 +196,14 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:2677 - Node <divider/Qp_28> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <divider/Qp_29> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <divider/Qp_30> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <divider/Qp_31> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <divider/Qp_32> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <divider/Qp_33> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <divider/Qp_34> of sequential type is unconnected in block <toplevel>.
+WARNING:Xst:2677 - Node <divider/Qp_35> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <divider/Qp_36> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <divider/Qp_37> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <divider/Qp_38> of sequential type is unconnected in block <toplevel>.
@@ -222,8 +230,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 36
- Flip-Flops                                            : 36
+# Registers                                            : 28
+ Flip-Flops                                            : 28
 
 =========================================================================
 
@@ -246,15 +254,15 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 109
+# BELS                             : 85
 #      GND                         : 1
 #      INV                         : 1
-#      LUT1                        : 35
-#      MUXCY                       : 35
+#      LUT1                        : 27
+#      MUXCY                       : 27
 #      VCC                         : 1
-#      XORCY                       : 36
-# FlipFlops/Latches                : 36
-#      FD                          : 36
+#      XORCY                       : 28
+# FlipFlops/Latches                : 28
+#      FD                          : 28
 # Clock Buffers                    : 3
 #      BUFG                        : 3
 # IO Buffers                       : 5
@@ -270,15 +278,15 @@ Selected Device : 6slx150fgg484-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              36  out of  184304     0%  
- Number of Slice LUTs:                   36  out of  92152     0%  
-    Number used as Logic:                36  out of  92152     0%  
+ Number of Slice Registers:              28  out of  184304     0%  
+ Number of Slice LUTs:                   28  out of  92152     0%  
+    Number used as Logic:                28  out of  92152     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     36
-   Number with an unused Flip Flop:       0  out of     36     0%  
-   Number with an unused LUT:             0  out of     36     0%  
-   Number of fully used LUT-FF pairs:    36  out of     36   100%  
+ Number of LUT Flip Flop pairs used:     28
+   Number with an unused Flip Flop:       0  out of     28     0%  
+   Number with an unused LUT:             0  out of     28     0%  
+   Number of fully used LUT-FF pairs:    28  out of     28   100%  
    Number of unique control sets:         1
 
 IO Utilization: 
@@ -310,7 +318,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clockpll/pll_base_inst/CLKOUT0     | BUFG                   | 36    |
+clockpll/pll_base_inst/CLKOUT0     | BUFG                   | 28    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -321,7 +329,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.747ns (Maximum Frequency: 364.100MHz)
+   Minimum period: 2.561ns (Maximum Frequency: 390.549MHz)
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: 4.162ns
    Maximum combinational path delay: No path found
@@ -332,16 +340,16 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clockpll/pll_base_inst/CLKOUT0'
-  Clock period: 2.747ns (frequency: 364.100MHz)
-  Total number of paths / destination ports: 666 / 36
+  Clock period: 2.561ns (frequency: 390.549MHz)
+  Total number of paths / destination ports: 406 / 28
 -------------------------------------------------------------------------
-Delay:               2.747ns (Levels of Logic = 37)
+Delay:               2.561ns (Levels of Logic = 29)
   Source:            divider/Qp_0 (FF)
-  Destination:       divider/Qp_35 (FF)
+  Destination:       divider/Qp_27 (FF)
   Source Clock:      clockpll/pll_base_inst/CLKOUT0 rising
   Destination Clock: clockpll/pll_base_inst/CLKOUT0 rising
 
-  Data Path: divider/Qp_0 to divider/Qp_35
+  Data Path: divider/Qp_0 to divider/Qp_27
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -373,36 +381,28 @@ Delay:               2.747ns (Levels of Logic = 37)
      MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<23> (divider/Mcount_Qp_cy<23>)
      MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<24> (divider/Mcount_Qp_cy<24>)
      MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<25> (divider/Mcount_Qp_cy<25>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<26> (divider/Mcount_Qp_cy<26>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<27> (divider/Mcount_Qp_cy<27>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<28> (divider/Mcount_Qp_cy<28>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<29> (divider/Mcount_Qp_cy<29>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<30> (divider/Mcount_Qp_cy<30>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<31> (divider/Mcount_Qp_cy<31>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<32> (divider/Mcount_Qp_cy<32>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<33> (divider/Mcount_Qp_cy<33>)
-     MUXCY:CI->O           0   0.023   0.000  divider/Mcount_Qp_cy<34> (divider/Mcount_Qp_cy<34>)
-     XORCY:CI->O           1   0.206   0.000  divider/Mcount_Qp_xor<35> (Result<35>)
-     FD:D                      0.074          divider/Qp_35
+     MUXCY:CI->O           0   0.023   0.000  divider/Mcount_Qp_cy<26> (divider/Mcount_Qp_cy<26>)
+     XORCY:CI->O           1   0.206   0.000  divider/Mcount_Qp_xor<27> (Result<27>)
+     FD:D                      0.074          divider/Qp_27
     ----------------------------------------
-    Total                      2.747ns (2.066ns logic, 0.681ns route)
-                                       (75.2% logic, 24.8% route)
+    Total                      2.561ns (1.880ns logic, 0.681ns route)
+                                       (73.4% logic, 26.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clockpll/pll_base_inst/CLKOUT0'
-  Total number of paths / destination ports: 1 / 1
+  Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
 Offset:              4.162ns (Levels of Logic = 1)
-  Source:            divider/Qp_35 (FF)
-  Destination:       led_blue (PAD)
+  Source:            divider/Qp_26 (FF)
+  Destination:       led_red (PAD)
   Source Clock:      clockpll/pll_base_inst/CLKOUT0 rising
 
-  Data Path: divider/Qp_35 to led_blue
+  Data Path: divider/Qp_26 to led_red
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.525   0.725  divider/Qp_35 (divider/Qp_35)
-     OBUF:I->O                 2.912          led_blue_OBUF (led_blue)
+     FD:C->Q               2   0.525   0.725  divider/Qp_26 (divider/Qp_26)
+     OBUF:I->O                 2.912          led_red_OBUF (led_red)
     ----------------------------------------
     Total                      4.162ns (3.437ns logic, 0.725ns route)
                                        (82.6% logic, 17.4% route)
@@ -417,21 +417,21 @@ Clock to Setup on destination clock clockpll/pll_base_inst/CLKOUT0
                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------+---------+---------+---------+---------+
-clockpll/pll_base_inst/CLKOUT0|    2.747|         |         |         |
+clockpll/pll_base_inst/CLKOUT0|    2.561|         |         |         |
 ------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 7.34 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.10 secs
  
 --> 
 
 
-Total memory usage is 499568 kilobytes
+Total memory usage is 499576 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   14 (   0 filtered)
+Number of warnings :   22 (   0 filtered)
 Number of infos    :    3 (   0 filtered)
 
