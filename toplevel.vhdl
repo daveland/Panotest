@@ -94,7 +94,7 @@ divider : simple_counter
 			);
 			
 led_red <= '0' ;--counter_output(36);
-led_blue <=  '1'; --counter_output(35);
+led_blue <=  counter_output(35);
 led_green <= '0';
 
 RESET_OUT_N <='1';

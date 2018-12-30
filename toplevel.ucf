@@ -1,10 +1,10 @@
 
-
-
+NET "osc_clk" TNM_NET = "clk25_grp";
+TIMESPEC TS_PER_FREQIN = PERIOD "clk25_grp" 40 ns;
 
 # PlanAhead Generated physical constraints 
 
-NET "osc_clk" LOC = Y13;
+NET "osc_clk"  Period =40ns | LOC = Y13;
 NET "led_blue" LOC = H13;
 NET "led_green" LOC = F13;
 NET "led_red" LOC = E12;
