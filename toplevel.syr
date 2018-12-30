@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: toplevel.prj
@@ -133,6 +133,7 @@ Elaborating entity <toplevel> (architecture <Behavioral>) from library <work>.
 Elaborating entity <pll2> (architecture <xilinx>) from library <work>.
 
 Elaborating entity <simple_counter> (architecture <Behavioral>) with generics from library <work>.
+WARNING:Xst:2972 - "/home/ise/testpano/toplevel.vhdl" line 84. All outputs of instance <divider> of block <simple_counter> are unconnected in block <toplevel>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -141,12 +142,12 @@ Elaborating entity <simple_counter> (architecture <Behavioral>) with generics fr
 Synthesizing Unit <toplevel>.
     Related source file is "/home/ise/testpano/toplevel.vhdl".
 WARNING:Xst:647 - Input <pano_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <SYSRST_N> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 INFO:Xst:3210 - "/home/ise/testpano/toplevel.vhdl" line 71: Output port <CLK_OUT2> of the instance <clockpll> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/ise/testpano/toplevel.vhdl" line 71: Output port <LOCKED> of the instance <clockpll> is unconnected or connected to loadless signal.
-    Found 1-bit register for signal <led_green>.
-    Found 1-bit register for signal <RESET_OUT_N>.
+INFO:Xst:3210 - "/home/ise/testpano/toplevel.vhdl" line 84: Output port <Q> of the instance <divider> is unconnected or connected to loadless signal.
     Summary:
-	inferred   2 D-type flip-flop(s).
+	no macro.
 Unit <toplevel> synthesized.
 
 Synthesizing Unit <pll2>.
@@ -155,26 +156,10 @@ Synthesizing Unit <pll2>.
 	no macro.
 Unit <pll2> synthesized.
 
-Synthesizing Unit <simple_counter>.
-    Related source file is "/home/ise/testpano/simple_counter.vhd".
-        NBIT = 48
-    Found 48-bit register for signal <Qp>.
-    Found 48-bit adder for signal <Qp[47]_GND_12_o_mux_3_OUT> created at line 64.
-    Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  48 D-type flip-flop(s).
-Unit <simple_counter> synthesized.
-
 =========================================================================
 HDL Synthesis Report
 
-Macro Statistics
-# Adders/Subtractors                                   : 1
- 48-bit adder                                          : 1
-# Registers                                            : 3
- 1-bit register                                        : 2
- 48-bit register                                       : 1
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -182,35 +167,15 @@ Macro Statistics
 =========================================================================
 
 
-Synthesizing (advanced) Unit <simple_counter>.
-The following registers are absorbed into counter <Qp>: 1 register on signal <Qp>.
-Unit <simple_counter> synthesized (advanced).
-
 =========================================================================
 Advanced HDL Synthesis Report
 
-Macro Statistics
-# Counters                                             : 1
- 48-bit up counter                                     : 1
-# Registers                                            : 2
- Flip-Flops                                            : 2
-
+Found no macro
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <divider/Qp_37> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <divider/Qp_38> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <divider/Qp_39> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <divider/Qp_40> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <divider/Qp_41> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <divider/Qp_42> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <divider/Qp_43> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <divider/Qp_44> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <divider/Qp_45> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <divider/Qp_46> of sequential type is unconnected in block <toplevel>.
-WARNING:Xst:2677 - Node <divider/Qp_47> of sequential type is unconnected in block <toplevel>.
 INFO:Xst:1901 - Instance clockpll/pll_base_inst in unit clockpll/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
 
 Optimizing unit <toplevel> ...
@@ -224,10 +189,7 @@ Final Macro Processing ...
 =========================================================================
 Final Register Report
 
-Macro Statistics
-# Registers                                            : 39
- Flip-Flops                                            : 39
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -249,21 +211,12 @@ Top Level Output File Name         : toplevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 113
+# BELS                             : 2
 #      GND                         : 1
-#      INV                         : 2
-#      LUT1                        : 36
-#      MUXCY                       : 36
 #      VCC                         : 1
-#      XORCY                       : 37
-# FlipFlops/Latches                : 39
-#      FD                          : 37
-#      FDC                         : 1
-#      FDP                         : 1
 # Clock Buffers                    : 3
 #      BUFG                        : 3
-# IO Buffers                       : 6
-#      IBUF                        : 1
+# IO Buffers                       : 5
 #      IBUFG                       : 1
 #      OBUF                        : 4
 # Others                           : 1
@@ -276,21 +229,17 @@ Selected Device : 6slx150fgg484-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              37  out of  184304     0%  
- Number of Slice LUTs:                   38  out of  92152     0%  
-    Number used as Logic:                38  out of  92152     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     38
-   Number with an unused Flip Flop:       1  out of     38     2%  
-   Number with an unused LUT:             0  out of     38     0%  
-   Number of fully used LUT-FF pairs:    37  out of     38    97%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
 
 IO Utilization: 
  Number of IOs:                           7
- Number of bonded IOBs:                   6  out of    338     1%  
-    IOB Flip Flops/Latches:               2
+ Number of bonded IOBs:                   5  out of    338     1%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
@@ -314,11 +263,7 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clockpll/pll_base_inst/CLKOUT0     | BUFG                   | 39    |
------------------------------------+------------------------+-------+
+No clock signals found in this design
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -328,9 +273,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.770ns (Maximum Frequency: 361.043MHz)
-   Minimum input arrival time before clock: 3.448ns
-   Maximum output required time after clock: 4.162ns
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -338,128 +283,22 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clockpll/pll_base_inst/CLKOUT0'
-  Clock period: 2.770ns (frequency: 361.043MHz)
-  Total number of paths / destination ports: 703 / 37
--------------------------------------------------------------------------
-Delay:               2.770ns (Levels of Logic = 38)
-  Source:            divider/Qp_0 (FF)
-  Destination:       divider/Qp_36 (FF)
-  Source Clock:      clockpll/pll_base_inst/CLKOUT0 rising
-  Destination Clock: clockpll/pll_base_inst/CLKOUT0 rising
-
-  Data Path: divider/Qp_0 to divider/Qp_36
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               1   0.525   0.681  divider/Qp_0 (divider/Qp_0)
-     INV:I->O              1   0.255   0.000  divider/Mcount_Qp_lut<0>_INV_0 (divider/Mcount_Qp_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  divider/Mcount_Qp_cy<0> (divider/Mcount_Qp_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<1> (divider/Mcount_Qp_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<2> (divider/Mcount_Qp_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<3> (divider/Mcount_Qp_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<4> (divider/Mcount_Qp_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<5> (divider/Mcount_Qp_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<6> (divider/Mcount_Qp_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<7> (divider/Mcount_Qp_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<8> (divider/Mcount_Qp_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<9> (divider/Mcount_Qp_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<10> (divider/Mcount_Qp_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<11> (divider/Mcount_Qp_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<12> (divider/Mcount_Qp_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<13> (divider/Mcount_Qp_cy<13>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<14> (divider/Mcount_Qp_cy<14>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<15> (divider/Mcount_Qp_cy<15>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<16> (divider/Mcount_Qp_cy<16>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<17> (divider/Mcount_Qp_cy<17>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<18> (divider/Mcount_Qp_cy<18>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<19> (divider/Mcount_Qp_cy<19>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<20> (divider/Mcount_Qp_cy<20>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<21> (divider/Mcount_Qp_cy<21>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<22> (divider/Mcount_Qp_cy<22>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<23> (divider/Mcount_Qp_cy<23>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<24> (divider/Mcount_Qp_cy<24>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<25> (divider/Mcount_Qp_cy<25>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<26> (divider/Mcount_Qp_cy<26>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<27> (divider/Mcount_Qp_cy<27>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<28> (divider/Mcount_Qp_cy<28>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<29> (divider/Mcount_Qp_cy<29>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<30> (divider/Mcount_Qp_cy<30>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<31> (divider/Mcount_Qp_cy<31>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<32> (divider/Mcount_Qp_cy<32>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<33> (divider/Mcount_Qp_cy<33>)
-     MUXCY:CI->O           1   0.023   0.000  divider/Mcount_Qp_cy<34> (divider/Mcount_Qp_cy<34>)
-     MUXCY:CI->O           0   0.023   0.000  divider/Mcount_Qp_cy<35> (divider/Mcount_Qp_cy<35>)
-     XORCY:CI->O           1   0.206   0.000  divider/Mcount_Qp_xor<36> (Result<36>)
-     FD:D                      0.074          divider/Qp_36
-    ----------------------------------------
-    Total                      2.770ns (2.089ns logic, 0.681ns route)
-                                       (75.4% logic, 24.6% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clockpll/pll_base_inst/CLKOUT0'
-  Total number of paths / destination ports: 2 / 2
--------------------------------------------------------------------------
-Offset:              3.448ns (Levels of Logic = 2)
-  Source:            SYSRST_N (PAD)
-  Destination:       SYSRST (FF)
-  Destination Clock: clockpll/pll_base_inst/CLKOUT0 rising
-
-  Data Path: SYSRST_N to SYSRST
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  SYSRST_N_IBUF (SYSRST_N_IBUF)
-     INV:I->O              2   0.255   0.725  SYSRST_N_inv1_INV_0 (SYSRST_N_inv)
-     FDP:PRE                   0.459          SYSRST
-    ----------------------------------------
-    Total                      3.448ns (2.042ns logic, 1.406ns route)
-                                       (59.2% logic, 40.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clockpll/pll_base_inst/CLKOUT0'
-  Total number of paths / destination ports: 4 / 4
--------------------------------------------------------------------------
-Offset:              4.162ns (Levels of Logic = 1)
-  Source:            divider/Qp_36 (FF)
-  Destination:       led_red (PAD)
-  Source Clock:      clockpll/pll_base_inst/CLKOUT0 rising
-
-  Data Path: divider/Qp_36 to led_red
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               2   0.525   0.725  divider/Qp_36 (divider/Qp_36)
-     OBUF:I->O                 2.912          led_red_OBUF (led_red)
-    ----------------------------------------
-    Total                      4.162ns (3.437ns logic, 0.725ns route)
-                                       (82.6% logic, 17.4% route)
-
-=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
-
-Clock to Setup on destination clock clockpll/pll_base_inst/CLKOUT0
-------------------------------+---------+---------+---------+---------+
-                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------+---------+---------+---------+---------+
-clockpll/pll_base_inst/CLKOUT0|    2.770|         |         |         |
-------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.33 secs
+Total CPU time to Xst completion: 7.25 secs
  
 --> 
 
 
-Total memory usage is 499592 kilobytes
+Total memory usage is 491164 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   12 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

@@ -93,22 +93,24 @@ divider : simple_counter
 			Q => counter_output
 			);
 			
-led_red <= counter_output(36);
-led_blue <= counter_output(35);
-led_green <= SYSRST;
+led_red <= '0' ;--counter_output(36);
+led_blue <=  '1'; --counter_output(35);
+led_green <= '0';
+
+RESET_OUT_N <='1';
 
 
--- clock in SYSRST_N and create SYSRST
-process(clk100mhz, SYSRST_N)
-    begin
-	if SYSRST_N = '0' then
- 	    SYSRST <= '1' ;
-		 RESET_OUT_N <= '0';
-	elsif clk100mhz'event and clk100mhz = '1' then
-		SYSRST <='0';
-		 RESET_OUT_N <= '1';
-	end if;
- end process;	
+---- clock in SYSRST_N and create SYSRST
+--process(clk100mhz, SYSRST_N)
+--    begin
+--	if SYSRST_N = '0' then
+-- 	    SYSRST <= '1' ;
+--		 RESET_OUT_N <= '0';
+--	elsif clk100mhz'event and clk100mhz = '1' then
+--		SYSRST <='0';
+--		 RESET_OUT_N <= '1';
+--	end if;
+-- end process;	
 
 end Behavioral;
 

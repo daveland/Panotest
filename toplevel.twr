@@ -30,44 +30,18 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 
 Data Sheet report:
 -----------------
-All values displayed in nanoseconds (ns)
+No constraints were found to generate data for the Data Sheet Report section.
+Use the Advanced Analysis (-a) option or generate global constraints for each
+clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
 
-Setup/Hold to clock osc_clk
-------------+------------+------------+------------+------------+------------------+--------+
-            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
-Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
-------------+------------+------------+------------+------------+------------------+--------+
-SYSRST_N    |   14.452(R)|      SLOW  |   -4.571(R)|      FAST  |clk100mhz         |   0.000|
-------------+------------+------------+------------+------------+------------------+--------+
-
-Clock osc_clk to Pad
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
-Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-RESET_OUT_N |         5.447(R)|      SLOW  |         3.368(R)|      FAST  |clk100mhz         |   0.000|
-led_blue    |         7.897(R)|      SLOW  |         4.693(R)|      FAST  |clk100mhz         |   0.000|
-led_green   |         5.207(R)|      SLOW  |         3.128(R)|      FAST  |clk100mhz         |   0.000|
-led_red     |         7.784(R)|      SLOW  |         4.576(R)|      FAST  |clk100mhz         |   0.000|
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-
-Clock to Setup on destination clock osc_clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-osc_clk        |    2.681|         |         |         |
----------------+---------+---------+---------+---------+
-
-
-Analysis completed Sun Dec 30 00:18:46 2018 
+Analysis completed Sun Dec 30 02:55:42 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 547 MB
+Peak Memory Usage: 546 MB
 
 
 

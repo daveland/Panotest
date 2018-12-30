@@ -1,7 +1,7 @@
 Release 14.7 - par P.20160913 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Sun Dec 30 00:18:32 2018
+Sun Dec 30 02:55:28 2018
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -47,7 +47,7 @@ Pinout by Pin Number:
 |AA3       |           |         |VCCO_2                       |         |           |2             |          |         |           |         |3.30     |          |           |                |
 |AA4       |           |IOBM     |IO_L57P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |AA5       |           |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
-|AA6       |RESET_OUT_N|IOB      |IO_L49P_D3_2                 |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
+|AA6       |RESET_OUT_N|IOB      |IO_L49P_D3_2                 |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |AA7       |           |         |VCCO_2                       |         |           |2             |          |         |           |         |3.30     |          |           |                |
 |AA8       |           |IOBM     |IO_L45P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |AA9       |           |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
@@ -186,7 +186,7 @@ Pinout by Pin Number:
 |F10       |           |IOBS     |IO_L17N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |F11       |           |         |VCCAUX                       |         |           |              |          |         |           |         |2.5      |          |           |                |
 |F12       |           |IOBS     |IO_L44N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|F13       |led_green  |IOB      |IO_L45P_0                    |OUTPUT   |LVCMOS33   |0             |12        |SLOW     |           |         |         |LOCATED   |YES        |NONE            |
+|F13       |led_green  |IOB      |IO_L45P_0                    |OUTPUT   |LVCMOS33   |0             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |F14       |           |IOBM     |IO_L48P_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |F15       |           |IOBS     |IO_L47N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |F16       |           |IOBM     |IO_L10P_1                    |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
@@ -494,7 +494,7 @@ Pinout by Pin Number:
 |Y10       |           |IOBS     |IO_L44N_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |Y11       |           |IOBM     |IO_L32P_GCLK29_2             |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |Y12       |           |IOBS     |IO_L29N_GCLK2_2              |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
-|Y13       |osc_clk    |IOB      |IO_L30P_GCLK1_D13_2          |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|Y13       |           |IOBM     |IO_L30P_GCLK1_D13_2          |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |Y14       |           |IOBS     |IO_L20N_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |Y15       |           |IOBM     |IO_L21P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |Y16       |           |IOBM     |IO_L17P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |

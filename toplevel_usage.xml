@@ -4,172 +4,80 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="8">
-<DesignStatistics TimeStamp="Sun Dec 30 00:19:12 2018"><group name="NetStatistics">
-<item name="NumNets_Active" rev="8">
-<attrib name="value" value="64"/></item>
-<item name="NumNets_Gnd" rev="8">
+<DeviceUsageSummary rev="10">
+<DesignStatistics TimeStamp="Sun Dec 30 03:17:18 2018"><group name="NetStatistics">
+<item name="NumNets_Active" rev="10">
+<attrib name="value" value="8"/></item>
+<item name="NumNets_Gnd" rev="10">
 <attrib name="value" value="1"/></item>
-<item name="NumNets_Vcc" rev="8">
+<item name="NumNets_Vcc" rev="10">
 <attrib name="value" value="1"/></item>
-<item name="NumNodesOfType_Active_BOUNCEIN" rev="8">
-<attrib name="value" value="9"/></item>
-<item name="NumNodesOfType_Active_BUFGOUT" rev="8">
+<item name="NumNodesOfType_Gnd_DOUBLE" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="NumNodesOfType_Gnd_GENERIC" rev="10">
 <attrib name="value" value="2"/></item>
-<item name="NumNodesOfType_Active_BUFHINP2OUT" rev="8">
-<attrib name="value" value="4"/></item>
-<item name="NumNodesOfType_Active_BUFIOINP" rev="8">
+<item name="NumNodesOfType_Gnd_IOBIN2OUT" rev="10">
 <attrib name="value" value="2"/></item>
-<item name="NumNodesOfType_Active_CLKPIN" rev="8">
-<attrib name="value" value="14"/></item>
-<item name="NumNodesOfType_Active_CLKPINFEED" rev="8">
-<attrib name="value" value="10"/></item>
-<item name="NumNodesOfType_Active_CNTRLPIN" rev="8">
+<item name="NumNodesOfType_Gnd_IOBOUTPUT" rev="10">
 <attrib name="value" value="2"/></item>
-<item name="NumNodesOfType_Active_DOUBLE" rev="8">
-<attrib name="value" value="5"/></item>
-<item name="NumNodesOfType_Active_GENERIC" rev="8">
-<attrib name="value" value="13"/></item>
-<item name="NumNodesOfType_Active_GLOBAL" rev="8">
-<attrib name="value" value="28"/></item>
-<item name="NumNodesOfType_Active_INPUT" rev="8">
-<attrib name="value" value="11"/></item>
-<item name="NumNodesOfType_Active_IOBIN2OUT" rev="8">
-<attrib name="value" value="5"/></item>
-<item name="NumNodesOfType_Active_IOBOUTPUT" rev="8">
-<attrib name="value" value="7"/></item>
-<item name="NumNodesOfType_Active_LUTINPUT" rev="8">
-<attrib name="value" value="37"/></item>
-<item name="NumNodesOfType_Active_OUTBOUND" rev="8">
-<attrib name="value" value="39"/></item>
-<item name="NumNodesOfType_Active_OUTPUT" rev="8">
-<attrib name="value" value="54"/></item>
-<item name="NumNodesOfType_Active_PADINPUT" rev="8">
-<attrib name="value" value="4"/></item>
-<item name="NumNodesOfType_Active_PADOUTPUT" rev="8">
+<item name="NumNodesOfType_Gnd_OUTBOUND" rev="10">
 <attrib name="value" value="2"/></item>
-<item name="NumNodesOfType_Active_PINBOUNCE" rev="8">
-<attrib name="value" value="11"/></item>
-<item name="NumNodesOfType_Active_PINFEED" rev="8">
-<attrib name="value" value="61"/></item>
-<item name="NumNodesOfType_Active_PINFEED2" rev="8">
+<item name="NumNodesOfType_Gnd_OUTPUT" rev="10">
 <attrib name="value" value="3"/></item>
-<item name="NumNodesOfType_Active_QUAD" rev="8">
-<attrib name="value" value="81"/></item>
-<item name="NumNodesOfType_Active_SINGLE" rev="8">
-<attrib name="value" value="5"/></item>
+<item name="NumNodesOfType_Gnd_PADINPUT" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Gnd_PINFEED" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Gnd_QUAD" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="NumNodesOfType_Gnd_SINGLE" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="NumNodesOfType_Vcc_GENERIC" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Vcc_HVCCOUT" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Vcc_IOBIN2OUT" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Vcc_IOBOUTPUT" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Vcc_PADINPUT" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Vcc_PINFEED" rev="10">
+<attrib name="value" value="2"/></item>
 </group>
 <group name="SiteStatistics">
-<item name="BUFG-BUFGMUX" rev="8">
-<attrib name="value" value="2"/></item>
-<item name="IOB-IOBM" rev="8">
-<attrib name="value" value="6"/></item>
-<item name="IOB-IOBS" rev="8">
+<item name="IOB-IOBM" rev="10">
+<attrib name="value" value="5"/></item>
+<item name="IOB-IOBS" rev="10">
 <attrib name="value" value="1"/></item>
-<item name="SLICEL-SLICEM" rev="8">
-<attrib name="value" value="10"/></item>
 </group>
 <group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="7">
-<attrib name="value" value="7"/></item>
-<item name="AGG_IO" rev="7">
-<attrib name="value" value="7"/></item>
-<item name="AGG_LOCED_IO" rev="7">
-<attrib name="value" value="7"/></item>
-<item name="AGG_SLICE" rev="7">
-<attrib name="value" value="10"/></item>
-<item name="NUM_BONDED_IOB" rev="7">
-<attrib name="value" value="7"/></item>
-<item name="NUM_BSFULL" rev="7">
-<attrib name="value" value="37"/></item>
-<item name="NUM_BSUSED" rev="7">
-<attrib name="value" value="37"/></item>
-<item name="NUM_BUFG" rev="7">
-<attrib name="value" value="2"/></item>
-<item name="NUM_BUFIO2" rev="7">
-<attrib name="value" value="1"/></item>
-<item name="NUM_BUFIO2FB" rev="7">
-<attrib name="value" value="1"/></item>
-<item name="NUM_IOB_FF" rev="7">
-<attrib name="value" value="2"/></item>
-<item name="NUM_LOCED_IOB" rev="7">
-<attrib name="value" value="7"/></item>
-<item name="NUM_LOGIC_O5ANDO6" rev="7">
-<attrib name="value" value="1"/></item>
-<item name="NUM_LOGIC_O5ONLY" rev="7">
-<attrib name="value" value="35"/></item>
-<item name="NUM_LUT_RT_DRIVES_CARRY4" rev="7">
-<attrib name="value" value="1"/></item>
-<item name="NUM_LUT_RT_EXO6" rev="7">
-<attrib name="value" value="1"/></item>
-<item name="NUM_LUT_RT_O6" rev="7">
-<attrib name="value" value="35"/></item>
-<item name="NUM_OLOGIC2" rev="7">
-<attrib name="value" value="2"/></item>
-<item name="NUM_PLL_ADV" rev="7">
-<attrib name="value" value="1"/></item>
-<item name="NUM_SLICEL" rev="7">
-<attrib name="value" value="10"/></item>
-<item name="NUM_SLICE_CARRY4" rev="7">
-<attrib name="value" value="10"/></item>
-<item name="NUM_SLICE_CONTROLSET" rev="7">
-<attrib name="value" value="1"/></item>
-<item name="NUM_SLICE_CYINIT" rev="7">
-<attrib name="value" value="74"/></item>
-<item name="NUM_SLICE_FF" rev="7">
-<attrib name="value" value="37"/></item>
-<item name="NUM_UNUSABLE_FF_BELS" rev="7">
-<attrib name="value" value="3"/></item>
+<item name="AGG_BONDED_IO" rev="9">
+<attrib name="value" value="6"/></item>
+<item name="AGG_IO" rev="9">
+<attrib name="value" value="6"/></item>
+<item name="AGG_LOCED_IO" rev="9">
+<attrib name="value" value="6"/></item>
+<item name="NUM_BONDED_IOB" rev="9">
+<attrib name="value" value="6"/></item>
+<item name="NUM_LOCED_IOB" rev="9">
+<attrib name="value" value="6"/></item>
 </group>
 </DesignStatistics>
-<DeviceUsage TimeStamp="Sun Dec 30 00:19:12 2018"><group name="SiteSummary">
-<item name="BUFG" rev="8">
+<DeviceUsage TimeStamp="Sun Dec 30 03:17:18 2018"><group name="SiteSummary">
+<item name="IOB" rev="10">
+<attrib name="total" value="1000000"/><attrib name="used" value="6"/></item>
+<item name="IOB_IMUX" rev="10">
 <attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
-<item name="BUFG_BUFG" rev="8">
+<item name="IOB_INBUF" rev="10">
 <attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
-<item name="BUFIO2" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="BUFIO2FB" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="BUFIO2FB_BUFIO2FB" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="BUFIO2_BUFIO2" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="CARRY4" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="10"/></item>
-<item name="HARD0" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="INVERTER" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="IOB" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="7"/></item>
-<item name="IOB_IMUX" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="3"/></item>
-<item name="IOB_INBUF" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="3"/></item>
-<item name="IOB_OUTBUF" rev="8">
+<item name="IOB_OUTBUF" rev="10">
 <attrib name="total" value="1000000"/><attrib name="used" value="4"/></item>
-<item name="LUT5" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="36"/></item>
-<item name="LUT6" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="37"/></item>
-<item name="OLOGIC2" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
-<item name="OLOGIC2_OUTFF" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
-<item name="PAD" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="7"/></item>
-<item name="PLL_ADV" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="PLL_ADV_PLL_ADV" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="REG_SR" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="37"/></item>
-<item name="SLICEL" rev="8">
-<attrib name="total" value="1000000"/><attrib name="used" value="10"/></item>
+<item name="PAD" rev="10">
+<attrib name="total" value="1000000"/><attrib name="used" value="6"/></item>
 </group>
 </DeviceUsage>
-<ReportConfigData TimeStamp="Sun Dec 30 00:19:12 2018"><group name="REG_SR">
+<ReportConfigData TimeStamp="Sun Dec 30 03:17:18 2018"><group name="REG_SR">
 <item name="CK" rev="8">
 <attrib name="CK" value="37"/><attrib name="CK_INV" value="0"/></item>
 <item name="LATCH_OR_FF" rev="8">
@@ -354,11 +262,11 @@
 <attrib name="RST" value="1"/><attrib name="RST_INV" value="0"/></item>
 </group>
 <group name="IOB_OUTBUF">
-<item name="DRIVEATTRBOX" rev="8">
+<item name="DRIVEATTRBOX" rev="10">
 <attrib name="12" value="4"/></item>
-<item name="SLEW" rev="8">
+<item name="SLEW" rev="10">
 <attrib name="SLOW" value="4"/></item>
-<item name="SUSPEND" rev="8">
+<item name="SUSPEND" rev="10">
 <attrib name="3STATE" value="4"/></item>
 </group>
 <group name="SLICEX">
@@ -398,7 +306,7 @@
 <attrib name="ASYNC" value="2"/></item>
 </group>
 </ReportConfigData>
-<ReportPinData TimeStamp="Sun Dec 30 00:19:12 2018"><group name="BUFIO2">
+<ReportPinData TimeStamp="Sun Dec 30 03:17:18 2018"><group name="BUFIO2">
 <item name="DIVCLK" rev="8">
 <attrib name="value" value="1"/></item>
 <item name="I" rev="8">
@@ -457,9 +365,9 @@
 <attrib name="value" value="1"/></item>
 </group>
 <group name="IOB_OUTBUF">
-<item name="IN" rev="8">
+<item name="IN" rev="10">
 <attrib name="value" value="4"/></item>
-<item name="OUT" rev="8">
+<item name="OUT" rev="10">
 <attrib name="value" value="4"/></item>
 </group>
 <group name="SLICEX">
@@ -483,8 +391,8 @@
 <attrib name="value" value="2"/></item>
 </group>
 <group name="PAD">
-<item name="PAD" rev="8">
-<attrib name="value" value="7"/></item>
+<item name="PAD" rev="10">
+<attrib name="value" value="6"/></item>
 </group>
 <group name="BUFIO2FB">
 <item name="I" rev="8">
@@ -499,10 +407,10 @@
 <attrib name="value" value="1"/></item>
 </group>
 <group name="IOB_INBUF">
-<item name="OUT" rev="8">
-<attrib name="value" value="3"/></item>
-<item name="PAD" rev="8">
-<attrib name="value" value="3"/></item>
+<item name="OUT" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="PAD" rev="10">
+<attrib name="value" value="2"/></item>
 </group>
 <group name="PLL_ADV">
 <item name="CLKFBIN" rev="8">
@@ -593,20 +501,18 @@
 <attrib name="value" value="1"/></item>
 </group>
 <group name="IOB_IMUX">
-<item name="I" rev="8">
+<item name="I" rev="10">
 <attrib name="value" value="2"/></item>
-<item name="I_B" rev="8">
-<attrib name="value" value="1"/></item>
-<item name="OUT" rev="8">
-<attrib name="value" value="3"/></item>
+<item name="OUT" rev="10">
+<attrib name="value" value="2"/></item>
 </group>
 <group name="IOB">
-<item name="I" rev="8">
-<attrib name="value" value="3"/></item>
-<item name="O" rev="8">
+<item name="I" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="O" rev="10">
 <attrib name="value" value="4"/></item>
-<item name="PAD" rev="8">
-<attrib name="value" value="7"/></item>
+<item name="PAD" rev="10">
+<attrib name="value" value="6"/></item>
 </group>
 <group name="HARD0">
 <item name="0" rev="8">
