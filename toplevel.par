@@ -1,7 +1,7 @@
 Release 14.7 par P.20160913 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-localhost.localdomain::  Sun Dec 30 03:38:24 2018
+localhost.localdomain::  Mon Dec 31 15:21:37 2018
 
 par -w -intstyle ise -ol high -mt off toplevel_map.ncd toplevel.ncd
 toplevel.pcf 
@@ -22,15 +22,15 @@ Device speed data version:  "PRODUCTION 1.23 2016-11-22".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                    28 out of 184,304    1%
-    Number used as Flip Flops:                  28
+  Number of Slice Registers:                    27 out of 184,304    1%
+    Number used as Flip Flops:                  27
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                         28 out of  92,152    1%
-    Number used as logic:                       27 out of  92,152    1%
+  Number of Slice LUTs:                         27 out of  92,152    1%
+    Number used as logic:                       26 out of  92,152    1%
       Number using O6 output only:               0
-      Number using O5 output only:              26
+      Number using O5 output only:              25
       Number using O5 and O6:                    1
       Number used as ROM:                        0
     Number used as Memory:                       0 out of  21,680    0%
@@ -42,10 +42,10 @@ Slice Logic Utilization:
 Slice Logic Distribution:
   Number of occupied Slices:                     7 out of  23,038    1%
   Number of MUXCYs used:                        28 out of  46,076    1%
-  Number of LUT Flip Flop pairs used:           28
-    Number with an unused Flip Flop:             0 out of      28    0%
-    Number with an unused LUT:                   0 out of      28    0%
-    Number of fully used LUT-FF pairs:          28 out of      28  100%
+  Number of LUT Flip Flop pairs used:           27
+    Number with an unused Flip Flop:             0 out of      27    0%
+    Number with an unused LUT:                   0 out of      27    0%
+    Number of fully used LUT-FF pairs:          27 out of      27  100%
     Number of slice register sites lost
       to control set restrictions:               0 out of 184,304    0%
 
@@ -58,6 +58,7 @@ Slice Logic Distribution:
 IO Utilization:
   Number of bonded IOBs:                         7 out of     338    2%
     Number of LOCed IOBs:                        7 out of       7  100%
+    IOB Flip Flops:                              1
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of     268    0%
@@ -74,7 +75,9 @@ Specific Feature Utilization:
   Number of DCM/DCM_CLKGENs:                     0 out of      12    0%
   Number of ILOGIC2/ISERDES2s:                   0 out of     586    0%
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     586    0%
-  Number of OLOGIC2/OSERDES2s:                   0 out of     586    0%
+  Number of OLOGIC2/OSERDES2s:                   1 out of     586    1%
+    Number used as OLOGIC2s:                     1
+    Number used as OSERDES2s:                    0
   Number of BSCANs:                              0 out of       4    0%
   Number of BUFHs:                               0 out of     384    0%
   Number of BUFPLLs:                             0 out of       8    0%
@@ -95,16 +98,15 @@ Router effort level (-rl):    High
 Starting initial Timing Analysis.  REAL time: 10 secs 
 Finished initial Timing Analysis.  REAL time: 10 secs 
 
-WARNING:Par:288 - The signal SYSRST_N_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal pano_button_IBUF has no load.  PAR will not attempt to route this signal.
 Starting Router
 
 
-Phase  1  : 79 unrouted;      REAL time: 12 secs 
+Phase  1  : 81 unrouted;      REAL time: 12 secs 
 
-Phase  2  : 43 unrouted;      REAL time: 14 secs 
+Phase  2  : 44 unrouted;      REAL time: 14 secs 
 
-Phase  3  : 0 unrouted;      REAL time: 15 secs 
+Phase  3  : 0 unrouted;      REAL time: 14 secs 
 
 Phase  4  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 20 secs 
 
@@ -140,7 +142,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk100mhz | BUFGMUX_X3Y13| No   |    7 |  0.084     |  1.744      |
+|           clk100mhz | BUFGMUX_X3Y13| No   |    8 |  0.908     |  2.560      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -162,8 +164,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  PERIOD analysis for net "clockpll/clkout0 | SETUP       |     7.750ns|     2.250ns|       0|           0
-  " derived from  NET "clockpll/clkin1" PER | HOLD        |     0.464ns|            |       0|           0
+  PERIOD analysis for net "clockpll/clkout0 | SETUP       |     7.587ns|     2.413ns|       0|           0
+  " derived from  NET "clockpll/clkin1" PER | HOLD        |     0.505ns|            |       0|           0
   IOD = 40 ns HIGH 50%                      | MINPERIOD   |     7.334ns|     2.666ns|       0|           0
 ----------------------------------------------------------------------------------------------------------
   TS_clockpll_clkout0 = PERIOD TIMEGRP "clo | MINPERIOD   |     7.334ns|     2.666ns|       0|           0
@@ -188,8 +190,8 @@ Derived Constraints for clockpll/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|clockpll/clkin1                |     40.000ns|     10.000ns|     10.664ns|            0|            0|            0|          406|
-| clockpll/clkout0              |     10.000ns|      2.666ns|          N/A|            0|            0|          406|            0|
+|clockpll/clkin1                |     40.000ns|     10.000ns|     10.664ns|            0|            0|            0|          378|
+| clockpll/clkout0              |     10.000ns|      2.666ns|          N/A|            0|            0|          378|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 Derived Constraints for TS_PER_FREQIN
@@ -209,7 +211,7 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-WARNING:Par:283 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+WARNING:Par:283 - There are 1 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
 Total REAL time to PAR completion: 21 secs 
 Total CPU time to PAR completion: 20 secs 
@@ -221,7 +223,7 @@ Routing: Completed - No errors found.
 Timing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 4
+Number of warning messages: 3
 Number of info messages: 0
 
 Writing design to file toplevel.ncd
