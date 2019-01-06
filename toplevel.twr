@@ -31,62 +31,65 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 
  0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 component switching limit errors)
- Minimum period is  10.000ns.
+ Minimum period is  16.000ns.
 --------------------------------------------------------------------------------
 
 Component Switching Limit Checks: NET "clockpll/clkin1" PERIOD = 40 ns HIGH 50%;
 --------------------------------------------------------------------------------
-Slack: 12.630ns (max period limit - period)
-  Period: 40.000ns
-  Max period limit: 52.630ns (19.001MHz) (Tpllper_CLKIN)
-  Physical resource: clockpll/pll_base_inst/PLL_ADV/CLKIN1
-  Logical resource: clockpll/pll_base_inst/PLL_ADV/CLKIN1
-  Location pin: PLL_ADV_X0Y2.CLKIN1
-  Clock network: clockpll/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
---------------------------------------------------------------------------------
-Slack: 12.630ns (max period limit - period)
-  Period: 40.000ns
-  Max period limit: 52.630ns (19.001MHz) (Tpllper_CLKFB)
-  Physical resource: clockpll/pll_base_inst/PLL_ADV/CLKFBOUT
-  Logical resource: clockpll/pll_base_inst/PLL_ADV/CLKFBOUT
-  Location pin: PLL_ADV_X0Y2.CLKFBOUT
-  Clock network: clockpll/clkfbout
---------------------------------------------------------------------------------
-Slack: 30.000ns (period - (min low pulse limit / (low pulse / period)))
+Slack: 24.000ns (period - (min low pulse limit / (low pulse / period)))
   Period: 40.000ns
   Low pulse: 20.000ns
-  Low pulse limit: 5.000ns (Tdcmpw_CLKIN_25_50)
-  Physical resource: clockpll/pll_base_inst/PLL_ADV/CLKIN1
-  Logical resource: clockpll/pll_base_inst/PLL_ADV/CLKIN1
-  Location pin: PLL_ADV_X0Y2.CLKIN1
-  Clock network: clockpll/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
+  Low pulse limit: 8.000ns (Tdcmpw_CLKIN_25_50)
+  Physical resource: clockpll/dcm_sp_inst/CLKIN
+  Logical resource: clockpll/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: clockpll/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 24.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 40.000ns
+  High pulse: 20.000ns
+  High pulse limit: 8.000ns (Tdcmpw_CLKIN_25_50)
+  Physical resource: clockpll/dcm_sp_inst/CLKIN
+  Logical resource: clockpll/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: clockpll/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 36.000ns (period - min period limit)
+  Period: 40.000ns
+  Min period limit: 4.000ns (250.000MHz) (Tdcmper_CLKIN)
+  Physical resource: clockpll/dcm_sp_inst/CLKIN
+  Logical resource: clockpll/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: clockpll/dcm_sp_inst_ML_NEW_DIVCLK
 --------------------------------------------------------------------------------
 
 ================================================================================
-Timing constraint: PERIOD analysis for net "clockpll/clkout0" derived from  NET 
-"clockpll/clkin1" PERIOD = 40 ns HIGH 50%;  divided by 4.00 to 10 nS   
+Timing constraint: PERIOD analysis for net "clk100mhz" derived from  NET 
+"clockpll/clkin1" PERIOD = 40 ns HIGH 50%;  divided by 4.00 to 10 nS and duty 
+cycle corrected to HIGH 5 nS  
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
  406 paths analyzed, 94 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   2.666ns.
+ Minimum period is   3.000ns.
 --------------------------------------------------------------------------------
 
 Paths for end point divider/Qp_26 (SLICE_X102Y163.CIN), 24 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     7.750ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.668ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_0 (FF)
   Destination:          divider/Qp_26 (FF)
   Requirement:          10.000ns
   Data Path Delay:      2.145ns (Levels of Logic = 7)
   Clock Path Skew:      0.048ns (0.828 - 0.780)
-  Source Clock:         clk100mhz rising at 0.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
-  Clock Uncertainty:    0.153ns
+  Source Clock:         clk100mhz_BUFG rising at 0.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
+  Clock Uncertainty:    0.235ns
 
-  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.297ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
   Maximum Data Path at Slow Process Corner: divider/Qp_0 to divider/Qp_26
@@ -123,19 +126,20 @@ Slack (setup path):     7.750ns (requirement - (data path - clock path skew + un
                                                        (80.3% logic, 19.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.843ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.761ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_4 (FF)
   Destination:          divider/Qp_26 (FF)
   Requirement:          10.000ns
   Data Path Delay:      2.051ns (Levels of Logic = 6)
   Clock Path Skew:      0.047ns (0.828 - 0.781)
-  Source Clock:         clk100mhz rising at 0.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
-  Clock Uncertainty:    0.153ns
+  Source Clock:         clk100mhz_BUFG rising at 0.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
+  Clock Uncertainty:    0.235ns
 
-  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.297ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
   Maximum Data Path at Slow Process Corner: divider/Qp_4 to divider/Qp_26
@@ -169,19 +173,20 @@ Slack (setup path):     7.843ns (requirement - (data path - clock path skew + un
                                                        (79.5% logic, 20.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.877ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.795ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_3 (FF)
   Destination:          divider/Qp_26 (FF)
   Requirement:          10.000ns
   Data Path Delay:      2.018ns (Levels of Logic = 7)
   Clock Path Skew:      0.048ns (0.828 - 0.780)
-  Source Clock:         clk100mhz rising at 0.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
-  Clock Uncertainty:    0.153ns
+  Source Clock:         clk100mhz_BUFG rising at 0.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
+  Clock Uncertainty:    0.235ns
 
-  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.297ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
   Maximum Data Path at Slow Process Corner: divider/Qp_3 to divider/Qp_26
@@ -221,19 +226,20 @@ Slack (setup path):     7.877ns (requirement - (data path - clock path skew + un
 
 Paths for end point divider/Qp_27 (SLICE_X102Y163.CIN), 24 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     7.750ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.668ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_0 (FF)
   Destination:          divider/Qp_27 (FF)
   Requirement:          10.000ns
   Data Path Delay:      2.145ns (Levels of Logic = 7)
   Clock Path Skew:      0.048ns (0.828 - 0.780)
-  Source Clock:         clk100mhz rising at 0.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
-  Clock Uncertainty:    0.153ns
+  Source Clock:         clk100mhz_BUFG rising at 0.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
+  Clock Uncertainty:    0.235ns
 
-  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.297ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
   Maximum Data Path at Slow Process Corner: divider/Qp_0 to divider/Qp_27
@@ -270,19 +276,20 @@ Slack (setup path):     7.750ns (requirement - (data path - clock path skew + un
                                                        (80.3% logic, 19.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.843ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.761ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_4 (FF)
   Destination:          divider/Qp_27 (FF)
   Requirement:          10.000ns
   Data Path Delay:      2.051ns (Levels of Logic = 6)
   Clock Path Skew:      0.047ns (0.828 - 0.781)
-  Source Clock:         clk100mhz rising at 0.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
-  Clock Uncertainty:    0.153ns
+  Source Clock:         clk100mhz_BUFG rising at 0.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
+  Clock Uncertainty:    0.235ns
 
-  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.297ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
   Maximum Data Path at Slow Process Corner: divider/Qp_4 to divider/Qp_27
@@ -316,19 +323,20 @@ Slack (setup path):     7.843ns (requirement - (data path - clock path skew + un
                                                        (79.5% logic, 20.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.877ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.795ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_3 (FF)
   Destination:          divider/Qp_27 (FF)
   Requirement:          10.000ns
   Data Path Delay:      2.018ns (Levels of Logic = 7)
   Clock Path Skew:      0.048ns (0.828 - 0.780)
-  Source Clock:         clk100mhz rising at 0.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
-  Clock Uncertainty:    0.153ns
+  Source Clock:         clk100mhz_BUFG rising at 0.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
+  Clock Uncertainty:    0.235ns
 
-  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.297ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
   Maximum Data Path at Slow Process Corner: divider/Qp_3 to divider/Qp_27
@@ -368,19 +376,20 @@ Slack (setup path):     7.877ns (requirement - (data path - clock path skew + un
 
 Paths for end point divider/Qp_25 (SLICE_X102Y163.CIN), 24 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     7.762ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.680ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_0 (FF)
   Destination:          divider/Qp_25 (FF)
   Requirement:          10.000ns
   Data Path Delay:      2.133ns (Levels of Logic = 7)
   Clock Path Skew:      0.048ns (0.828 - 0.780)
-  Source Clock:         clk100mhz rising at 0.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
-  Clock Uncertainty:    0.153ns
+  Source Clock:         clk100mhz_BUFG rising at 0.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
+  Clock Uncertainty:    0.235ns
 
-  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.297ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
   Maximum Data Path at Slow Process Corner: divider/Qp_0 to divider/Qp_25
@@ -417,19 +426,20 @@ Slack (setup path):     7.762ns (requirement - (data path - clock path skew + un
                                                        (80.2% logic, 19.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.855ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.773ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_4 (FF)
   Destination:          divider/Qp_25 (FF)
   Requirement:          10.000ns
   Data Path Delay:      2.039ns (Levels of Logic = 6)
   Clock Path Skew:      0.047ns (0.828 - 0.781)
-  Source Clock:         clk100mhz rising at 0.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
-  Clock Uncertainty:    0.153ns
+  Source Clock:         clk100mhz_BUFG rising at 0.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
+  Clock Uncertainty:    0.235ns
 
-  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.297ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
   Maximum Data Path at Slow Process Corner: divider/Qp_4 to divider/Qp_25
@@ -463,19 +473,20 @@ Slack (setup path):     7.855ns (requirement - (data path - clock path skew + un
                                                        (79.4% logic, 20.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.889ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.807ns (requirement - (data path - clock path skew + uncertainty))
   Source:               divider/Qp_3 (FF)
   Destination:          divider/Qp_25 (FF)
   Requirement:          10.000ns
   Data Path Delay:      2.006ns (Levels of Logic = 7)
   Clock Path Skew:      0.048ns (0.828 - 0.780)
-  Source Clock:         clk100mhz rising at 0.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
-  Clock Uncertainty:    0.153ns
+  Source Clock:         clk100mhz_BUFG rising at 0.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
+  Clock Uncertainty:    0.235ns
 
-  Clock Uncertainty:          0.153ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.297ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
   Maximum Data Path at Slow Process Corner: divider/Qp_3 to divider/Qp_25
@@ -513,9 +524,9 @@ Slack (setup path):     7.889ns (requirement - (data path - clock path skew + un
 
 --------------------------------------------------------------------------------
 
-Hold Paths: PERIOD analysis for net "clockpll/clkout0" derived from
+Hold Paths: PERIOD analysis for net "clk100mhz" derived from
  NET "clockpll/clkin1" PERIOD = 40 ns HIGH 50%;
- divided by 4.00 to 10 nS  
+ divided by 4.00 to 10 nS and duty cycle corrected to HIGH 5 nS 
 
 --------------------------------------------------------------------------------
 
@@ -527,8 +538,8 @@ Slack (hold path):      0.464ns (requirement - (clock path skew + uncertainty - 
   Requirement:          0.000ns
   Data Path Delay:      0.464ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
-  Source Clock:         clk100mhz rising at 10.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
+  Source Clock:         clk100mhz_BUFG rising at 10.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
   Minimum Data Path at Fast Process Corner: divider/Qp_27 to divider/Qp_27
@@ -556,8 +567,8 @@ Slack (hold path):      0.487ns (requirement - (clock path skew + uncertainty - 
   Requirement:          0.000ns
   Data Path Delay:      0.578ns (Levels of Logic = 2)
   Clock Path Skew:      0.091ns (0.435 - 0.344)
-  Source Clock:         clk100mhz rising at 10.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
+  Source Clock:         clk100mhz_BUFG rising at 10.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
   Minimum Data Path at Fast Process Corner: divider/Qp_10 to divider/Qp_12
@@ -585,8 +596,8 @@ Slack (hold path):      0.519ns (requirement - (clock path skew + uncertainty - 
   Requirement:          0.000ns
   Data Path Delay:      0.611ns (Levels of Logic = 3)
   Clock Path Skew:      0.092ns (0.435 - 0.343)
-  Source Clock:         clk100mhz rising at 10.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
+  Source Clock:         clk100mhz_BUFG rising at 10.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
   Minimum Data Path at Fast Process Corner: divider/Qp_6 to divider/Qp_12
@@ -617,8 +628,8 @@ Slack (hold path):      0.551ns (requirement - (clock path skew + uncertainty - 
   Requirement:          0.000ns
   Data Path Delay:      0.644ns (Levels of Logic = 4)
   Clock Path Skew:      0.093ns (0.435 - 0.342)
-  Source Clock:         clk100mhz rising at 10.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
+  Source Clock:         clk100mhz_BUFG rising at 10.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
   Minimum Data Path at Fast Process Corner: divider/Qp_2 to divider/Qp_12
@@ -655,8 +666,8 @@ Slack (hold path):      0.505ns (requirement - (clock path skew + uncertainty - 
   Requirement:          0.000ns
   Data Path Delay:      0.505ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
-  Source Clock:         clk100mhz rising at 10.000ns
-  Destination Clock:    clk100mhz rising at 10.000ns
+  Source Clock:         clk100mhz_BUFG rising at 10.000ns
+  Destination Clock:    clk100mhz_BUFG rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
   Minimum Data Path at Fast Process Corner: divider/Qp_1 to divider/Qp_1
@@ -676,26 +687,26 @@ Slack (hold path):      0.505ns (requirement - (clock path skew + uncertainty - 
 
 --------------------------------------------------------------------------------
 
-Component Switching Limit Checks: PERIOD analysis for net "clockpll/clkout0" derived from
+Component Switching Limit Checks: PERIOD analysis for net "clk100mhz" derived from
  NET "clockpll/clkin1" PERIOD = 40 ns HIGH 50%;
- divided by 4.00 to 10 nS  
+ divided by 4.00 to 10 nS and duty cycle corrected to HIGH 5 nS 
 
+--------------------------------------------------------------------------------
+Slack: 7.000ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 3.000ns (333.333MHz) (Tdcmper_CLKFX)
+  Physical resource: clockpll/dcm_sp_inst/CLKFX
+  Logical resource: clockpll/dcm_sp_inst/CLKFX
+  Location pin: DCM_X0Y1.CLKFX
+  Clock network: clk100mhz
 --------------------------------------------------------------------------------
 Slack: 7.334ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
-  Physical resource: clockpll/clkout1_buf/I0
-  Logical resource: clockpll/clkout1_buf/I0
+  Physical resource: clk100mhz_BUFG/I0
+  Logical resource: clk100mhz_BUFG/I0
   Location pin: BUFGMUX_X3Y13.I0
-  Clock network: clockpll/clkout0
---------------------------------------------------------------------------------
-Slack: 8.948ns (period - min period limit)
-  Period: 10.000ns
-  Min period limit: 1.052ns (950.570MHz) (Tpllper_CLKOUT(Foutmax))
-  Physical resource: clockpll/pll_base_inst/PLL_ADV/CLKOUT0
-  Logical resource: clockpll/pll_base_inst/PLL_ADV/CLKOUT0
-  Location pin: PLL_ADV_X0Y2.CLKOUT0
-  Clock network: clockpll/clkout0
+  Clock network: clk100mhz
 --------------------------------------------------------------------------------
 Slack: 9.525ns (period - min period limit)
   Period: 10.000ns
@@ -703,7 +714,7 @@ Slack: 9.525ns (period - min period limit)
   Physical resource: divider/Qp<3>/CLK
   Logical resource: divider/Qp_0/CK
   Location pin: SLICE_X102Y157.CLK
-  Clock network: clk100mhz
+  Clock network: clk100mhz_BUFG
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -712,39 +723,41 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 
  0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 component switching limit errors)
- Minimum period is  10.000ns.
+ Minimum period is  16.000ns.
 --------------------------------------------------------------------------------
 
 Component Switching Limit Checks: TS_PER_FREQIN = PERIOD TIMEGRP "clk25_grp" 40 ns HIGH 50%;
 --------------------------------------------------------------------------------
-Slack: 8.948ns (period - min period limit)
+Slack: 7.000ns (period - min period limit)
   Period: 10.000ns
-  Min period limit: 1.052ns (950.570MHz) (Tpllper_CLKOUT(Foutmax))
-  Physical resource: clockpll/pll_base_inst/PLL_ADV/CLKOUT0
-  Logical resource: clockpll/pll_base_inst/PLL_ADV/CLKOUT0
-  Location pin: PLL_ADV_X0Y2.CLKOUT0
-  Clock network: clockpll/clkout0
+  Min period limit: 3.000ns (333.333MHz) (Tdcmper_CLKFX)
+  Physical resource: clockpll/dcm_sp_inst/CLKFX
+  Logical resource: clockpll/dcm_sp_inst/CLKFX
+  Location pin: DCM_X0Y1.CLKFX
+  Clock network: clk100mhz
 --------------------------------------------------------------------------------
-Slack: 12.630ns (max period limit - period)
+Slack: 24.000ns (period - (min low pulse limit / (low pulse / period)))
   Period: 40.000ns
-  Max period limit: 52.630ns (19.001MHz) (Tpllper_CLKIN)
-  Physical resource: clockpll/pll_base_inst/PLL_ADV/CLKIN1
-  Logical resource: clockpll/pll_base_inst/PLL_ADV/CLKIN1
-  Location pin: PLL_ADV_X0Y2.CLKIN1
-  Clock network: clockpll/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
+  Low pulse: 20.000ns
+  Low pulse limit: 8.000ns (Tdcmpw_CLKIN_25_50)
+  Physical resource: clockpll/dcm_sp_inst/CLKIN
+  Logical resource: clockpll/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: clockpll/dcm_sp_inst_ML_NEW_DIVCLK
 --------------------------------------------------------------------------------
-Slack: 12.630ns (max period limit - period)
+Slack: 24.000ns (period - (min high pulse limit / (high pulse / period)))
   Period: 40.000ns
-  Max period limit: 52.630ns (19.001MHz) (Tpllper_CLKFB)
-  Physical resource: clockpll/pll_base_inst/PLL_ADV/CLKFBOUT
-  Logical resource: clockpll/pll_base_inst/PLL_ADV/CLKFBOUT
-  Location pin: PLL_ADV_X0Y2.CLKFBOUT
-  Clock network: clockpll/clkfbout
+  High pulse: 20.000ns
+  High pulse limit: 8.000ns (Tdcmpw_CLKIN_25_50)
+  Physical resource: clockpll/dcm_sp_inst/CLKIN
+  Logical resource: clockpll/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: clockpll/dcm_sp_inst_ML_NEW_DIVCLK
 --------------------------------------------------------------------------------
 
 ================================================================================
-Timing constraint: TS_clockpll_clkout0 = PERIOD TIMEGRP "clockpll_clkout0" 
-TS_PER_FREQIN / 4 HIGH         50%;
+Timing constraint: TS_clk100mhz = PERIOD TIMEGRP "clk100mhz" TS_PER_FREQIN / 4 
+HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
  0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
@@ -752,16 +765,15 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
  Minimum period is   2.666ns.
 --------------------------------------------------------------------------------
 
-Component Switching Limit Checks: TS_clockpll_clkout0 = PERIOD TIMEGRP "clockpll_clkout0" TS_PER_FREQIN / 4 HIGH
-        50%;
+Component Switching Limit Checks: TS_clk100mhz = PERIOD TIMEGRP "clk100mhz" TS_PER_FREQIN / 4 HIGH 50%;
 --------------------------------------------------------------------------------
 Slack: 7.334ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
-  Physical resource: clockpll/clkout1_buf/I0
-  Logical resource: clockpll/clkout1_buf/I0
+  Physical resource: clk100mhz_BUFG/I0
+  Logical resource: clk100mhz_BUFG/I0
   Location pin: BUFGMUX_X3Y13.I0
-  Clock network: clockpll/clkout0
+  Clock network: clk100mhz
 --------------------------------------------------------------------------------
 Slack: 9.525ns (period - min period limit)
   Period: 10.000ns
@@ -769,7 +781,7 @@ Slack: 9.525ns (period - min period limit)
   Physical resource: divider/Qp<3>/CLK
   Logical resource: divider/Qp_0/CK
   Location pin: SLICE_X102Y157.CLK
-  Clock network: clk100mhz
+  Clock network: clk100mhz_BUFG
 --------------------------------------------------------------------------------
 Slack: 9.525ns (period - min period limit)
   Period: 10.000ns
@@ -777,7 +789,7 @@ Slack: 9.525ns (period - min period limit)
   Physical resource: divider/Qp<3>/CLK
   Logical resource: divider/Qp_1/CK
   Location pin: SLICE_X102Y157.CLK
-  Clock network: clk100mhz
+  Clock network: clk100mhz_BUFG
 --------------------------------------------------------------------------------
 
 
@@ -788,8 +800,8 @@ Derived Constraints for clockpll/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|clockpll/clkin1                |     40.000ns|     10.000ns|     10.664ns|            0|            0|            0|          406|
-| clockpll/clkout0              |     10.000ns|      2.666ns|          N/A|            0|            0|          406|            0|
+|clockpll/clkin1                |     40.000ns|     16.000ns|     12.000ns|            0|            0|            0|          406|
+| clk100mhz                     |     10.000ns|      3.000ns|          N/A|            0|            0|          406|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 Derived Constraints for TS_PER_FREQIN
@@ -798,8 +810,8 @@ Derived Constraints for TS_PER_FREQIN
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_PER_FREQIN                  |     40.000ns|     10.000ns|     10.664ns|            0|            0|            0|            0|
-| TS_clockpll_clkout0           |     10.000ns|      2.666ns|          N/A|            0|            0|            0|            0|
+|TS_PER_FREQIN                  |     40.000ns|     16.000ns|     10.664ns|            0|            0|            0|            0|
+| TS_clk100mhz                  |     10.000ns|      2.666ns|          N/A|            0|            0|            0|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -814,7 +826,7 @@ Clock to Setup on destination clock osc_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-osc_clk        |    2.250|         |         |         |
+osc_clk        |    2.332|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -826,13 +838,13 @@ Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 Constraints cover 406 paths, 0 nets, and 47 connections
 
 Design statistics:
-   Minimum period:  10.000ns{1}   (Maximum frequency: 100.000MHz)
+   Minimum period:  16.000ns{1}   (Maximum frequency:  62.500MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Sun Dec 30 03:39:00 2018 
+Analysis completed Sat Jan  5 10:04:59 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:

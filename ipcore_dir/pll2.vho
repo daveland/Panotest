@@ -54,8 +54,9 @@
 -- "Output    Output      Phase     Duty      Pk-to-Pk        Phase"
 -- "Clock    Freq (MHz) (degrees) Cycle (%) Jitter (ps)  Error (ps)"
 ------------------------------------------------------------------------------
--- CLK_OUT1___100.000______0.000______50.0______322.853____283.048
--- CLK_OUT2___200.000______0.000______50.0______280.611____283.048
+-- CLK_OUT1___100.000______0.000______50.0______400.000____150.000
+-- CLK_OUT2___100.000____180.000______50.0______400.000____150.000
+-- CLK_OUT3___100.000______0.000______50.0______400.000____150.000
 --
 ------------------------------------------------------------------------------
 -- "Input Clock   Freq (MHz)    Input Jitter (UI)"
@@ -69,9 +70,12 @@ component pll2
 port
  (-- Clock in ports
   CLK_IN1           : in     std_logic;
+  CLKFB_IN          : in     std_logic;
   -- Clock out ports
   CLK_OUT1          : out    std_logic;
   CLK_OUT2          : out    std_logic;
+  CLK_OUT3          : out    std_logic;
+  CLKFB_OUT         : out    std_logic;
   -- Status and control signals
   RESET             : in     std_logic;
   LOCKED            : out    std_logic
@@ -86,9 +90,12 @@ your_instance_name : pll2
   port map
    (-- Clock in ports
     CLK_IN1 => CLK_IN1,
+    CLKFB_IN => CLKFB_IN,
     -- Clock out ports
     CLK_OUT1 => CLK_OUT1,
     CLK_OUT2 => CLK_OUT2,
+    CLK_OUT3 => CLK_OUT3,
+    CLKFB_OUT => CLKFB_OUT,
     -- Status and control signals
     RESET  => RESET,
     LOCKED => LOCKED);

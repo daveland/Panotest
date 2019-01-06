@@ -1,7 +1,7 @@
 
 # PlanAhead Launch Script for Pre-Synthesis Floorplanning, created by Project Navigator
 
-create_project -name testpano -dir "/home/ise/testpano/planAhead_run_4" -part xc6slx150fgg484-2
+create_project -name testpano -dir "/home/ise/daveland/github/Panotest/planAhead_run_5" -part xc6slx150fgg484-2
 set_param project.pinAheadLayout yes
 set srcset [get_property srcset [current_run -impl]]
 set_property target_constrs_file "toplevel.ucf" [current_fileset -constrset]

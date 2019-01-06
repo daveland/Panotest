@@ -48,23 +48,70 @@ architecture Behavioral of toplevel is
 
 signal  counter_output : std_logic_vector(47 downto 0);
 signal  locked : std_logic;
+signal clk100mhzP: std_logic;
+signal clk100mhzN: std_logic;
 signal clk100mhz: std_logic;
-signal clk200mhz: std_logic;
+signal clkfb : std_logic;
 signal SYSRST:std_logic;
+
+
+signal RS232_Uart_1_sout : std_logic;
+signal RS232_Uart_1_sin : std_logic;
+signal cpugpio : std_logic_vector(3 downto 0);
+
+signal Generic_EMAC_TX_ER :std_logic;
+signal Generic_EMAC_TX_EN:std_logic;
+signal Generic_EMAC_TX_CLK:std_logic;
+signal Generic_EMAC_TXD:std_logic_vector(3 downto 0);
+signal Generic_EMAC_RX_ER:std_logic;
+signal Generic_EMAC_RX_DV:std_logic;
+signal Generic_EMAC_RX_CLK:std_logic;
+signal Generic_EMAC_RXD:std_logic_vector (3 downto 0);
+signal Generic_EMAC_PHY_RST_N:std_logic;
+signal Generic_EMAC_MDIO:std_logic;
+signal Generic_EMAC_MDC:std_logic;
+signal Generic_EMAC_CRS:std_logic;
+signal Generic_EMAC_COL:std_logic;
 
 component pll2
 port
  (-- Clock in ports
   CLK_IN1           : in     std_logic;
+  CLKFB_IN          : in     std_logic;
   -- Clock out ports
   CLK_OUT1          : out    std_logic;
   CLK_OUT2          : out    std_logic;
+  CLK_OUT3          : out    std_logic;
+  CLKFB_OUT         : out    std_logic;
   -- Status and control signals
   RESET             : in     std_logic;
   LOCKED            : out    std_logic
  );
 end component;
 
+ component cpu1 is
+    port (
+      RS232_Uart_1_sout : out std_logic;
+      RS232_Uart_1_sin : in std_logic;
+      RESET : in std_logic;
+      Generic_GPIO_TRI_IO : inout std_logic_vector(0 to 3);
+      Generic_EMAC_TX_ER : out std_logic;
+      Generic_EMAC_TX_EN : out std_logic;
+      Generic_EMAC_TX_CLK : in std_logic;
+      Generic_EMAC_TXD : out std_logic_vector(3 downto 0);
+      Generic_EMAC_RX_ER : in std_logic;
+      Generic_EMAC_RX_DV : in std_logic;
+      Generic_EMAC_RX_CLK : in std_logic;
+      Generic_EMAC_RXD : in std_logic_vector(3 downto 0);
+      Generic_EMAC_PHY_RST_N : out std_logic;
+      Generic_EMAC_MDIO : inout std_logic;
+      Generic_EMAC_MDC : out std_logic;
+      Generic_EMAC_CRS : in std_logic;
+      Generic_EMAC_COL : in std_logic;
+      CLK_P : in std_logic;
+      CLK_N : in std_logic
+    );
+  end component;
 
 begin
 
@@ -72,13 +119,40 @@ clockpll : pll2
   port map
    (-- Clock in ports
     CLK_IN1 => osc_clk,
+	  CLKFB_IN => clkfb,
     -- Clock out ports
-    CLK_OUT1 => clk100mhz,
-    CLK_OUT2 => Clk200mhz,
+    CLK_OUT1 => clk100mhzP,
+    CLK_OUT2 => Clk100mhzN,
+	 CLK_OUT3 => clk100mhz,
+	  CLKFB_OUT => clkfb,
     -- Status and control signals
     RESET  => '0',
     LOCKED => locked);
 
+
+
+-- cpu : cpu1
+--    port map (
+--      RS232_Uart_1_sout => RS232_Uart_1_sout,
+--      RS232_Uart_1_sin => RS232_Uart_1_sin,
+--      RESET => '0',
+--      Generic_GPIO_TRI_IO => cpugpio,
+--      Generic_EMAC_TX_ER => Generic_EMAC_TX_ER,
+--      Generic_EMAC_TX_EN => Generic_EMAC_TX_EN,
+--      Generic_EMAC_TX_CLK => Generic_EMAC_TX_CLK,
+--      Generic_EMAC_TXD => Generic_EMAC_TXD,
+--      Generic_EMAC_RX_ER => Generic_EMAC_RX_ER,
+--      Generic_EMAC_RX_DV => Generic_EMAC_RX_DV,
+--      Generic_EMAC_RX_CLK => Generic_EMAC_RX_CLK,
+--      Generic_EMAC_RXD => Generic_EMAC_RXD,
+--      Generic_EMAC_PHY_RST_N => Generic_EMAC_PHY_RST_N,
+--      Generic_EMAC_MDIO => Generic_EMAC_MDIO,
+--      Generic_EMAC_MDC => Generic_EMAC_MDC,
+--      Generic_EMAC_CRS => Generic_EMAC_CRS,
+--      Generic_EMAC_COL => Generic_EMAC_COL,
+--      CLK_P => clk100mhzP,
+--      CLK_N => clk100mhzN
+--    );
 
 
 divider : simple_counter
@@ -101,12 +175,12 @@ RESET_OUT_N <='1';
 
 
 ---- clock in SYSRST_N and create SYSRST
---process(clk100mhz, SYSRST_N)
+--process(clk100mhzP, SYSRST_N)
 --    begin
 --	if SYSRST_N = '0' then
 -- 	    SYSRST <= '1' ;
 --		 RESET_OUT_N <= '0';
---	elsif clk100mhz'event and clk100mhz = '1' then
+--	elsif clk100mhzP'event and clk100mhzP = '1' then
 --		SYSRST <='0';
 --		 RESET_OUT_N <= '1';
 --	end if;

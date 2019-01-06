@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=/home/ise/testpano/toplevel.ncd
-OUTFILE=/home/ise/testpano/toplevel.bit
+INFILE=/home/ise/daveland/github/Panotest/toplevel.ncd
+OUTFILE=/home/ise/daveland/github/Panotest/toplevel.bit
 FAMILY=Spartan6
 PART=xc6slx150-2fgg484
-WORKINGDIR=/home/ise/testpano
+WORKINGDIR=/home/ise/daveland/github/Panotest
 LICENSE=ISE
-USER_INFO=211247857_0_0_007
+USER_INFO=8416_11442_1478797146_620

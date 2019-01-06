@@ -10,7 +10,7 @@ Target Device  : xc6slx150
 Target Package : fgg484
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Sun Dec 30 03:38:01 2018
+Mapped Date    : Sat Jan  5 10:03:06 2019
 
 Design Summary
 --------------
@@ -67,7 +67,9 @@ Specific Feature Utilization:
   Number of BUFG/BUFGMUXs:                       2 out of      16   12%
     Number used as BUFGs:                        2
     Number used as BUFGMUX:                      0
-  Number of DCM/DCM_CLKGENs:                     0 out of      12    0%
+  Number of DCM/DCM_CLKGENs:                     1 out of      12    8%
+    Number used as DCMs:                         1
+    Number used as DCM_CLKGENs:                  0
   Number of ILOGIC2/ISERDES2s:                   0 out of     586    0%
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     586    0%
   Number of OLOGIC2/OSERDES2s:                   0 out of     586    0%
@@ -79,16 +81,16 @@ Specific Feature Utilization:
   Number of ICAPs:                               0 out of       1    0%
   Number of MCBs:                                0 out of       4    0%
   Number of PCILOGICSEs:                         0 out of       2    0%
-  Number of PLL_ADVs:                            1 out of       6   16%
+  Number of PLL_ADVs:                            0 out of       6    0%
   Number of PMVs:                                0 out of       1    0%
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
 Average Fanout of Non-Clock Nets:                1.02
 
-Peak Memory Usage:  1034 MB
-Total REAL time to MAP completion:  18 secs 
-Total CPU time to MAP completion:   17 secs 
+Peak Memory Usage:  1018 MB
+Total REAL time to MAP completion:  37 secs 
+Total CPU time to MAP completion:   35 secs 
 
 Table of Contents
 -----------------
@@ -111,9 +113,13 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
 
 Section 3 - Informational
 -------------------------
+INFO:Security:56 - Part 'xc6slx150' is not a WebPack part.
 INFO:LIT:243 - Logical network pano_button_IBUF has no load.
 INFO:LIT:395 - The above info message is repeated 1 more times for the following
    (max. 5 shown):
@@ -132,28 +138,16 @@ INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 INFO:Pack:1650 - Map created a placed design.
+INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM comp clockpll/dcm_sp_inst,
+   consult the device Data Sheet.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-   1 block(s) removed
    2 block(s) optimized away
-   1 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
-
-The trimmed logic report below shows the logic removed from your design due to
-sourceless or loadless signals, and VCC or ground connections.  If the removal
-of a signal or symbol results in the subsequent removal of an additional signal
-or symbol, the message explaining that second removal will be indented.  This
-indentation will be repeated as a chain of related logic is removed.
-
-To quickly locate the original cause for the removal of a chain of logic, look
-above the place where that logic is listed in the trimming report, then locate
-the lines that are least indented (begin at the leftmost edge).
-
-Loadless block "clockpll/clkout2_buf" (CKBUF) removed.
- The signal "clockpll/clkout1" is loadless and has been removed.
 
 Optimized Block(s):
 TYPE 		BLOCK

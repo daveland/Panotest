@@ -1,0 +1,13 @@
+-p
+xc6slx150fgg484-2
+-lang
+vhdl
+-intstyle
+ise
+-toplevel
+no
+-ti
+cpu1_i
+-msg
+__xps/ise/xmsgprops.lst
+cpu1.mhs

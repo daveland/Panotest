@@ -1,8 +1,11 @@
 Release 14.7 Drc P.20160913 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Sun Dec 30 03:39:11 2018
+Sat Jan  5 10:06:26 2019
 
 drc -z toplevel.ncd toplevel.pcf
 
+INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM comp clockpll/dcm_sp_inst,
+   consult the device Data Sheet.
 DRC detected 0 errors and 0 warnings.

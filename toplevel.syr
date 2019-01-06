@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: toplevel.prj
@@ -111,16 +111,19 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/ise/testpano/ipcore_dir/pll2.vhd" into library work
+Parsing VHDL file "/home/ise/daveland/github/Panotest/cpu1/hdl/cpu1.vhd" into library work
+Parsing entity <cpu1>.
+Parsing architecture <STRUCTURE> of entity <cpu1>.
+Parsing VHDL file "/home/ise/daveland/github/Panotest/ipcore_dir/pll2.vhd" into library work
 Parsing entity <pll2>.
 Parsing architecture <xilinx> of entity <pll2>.
-Parsing VHDL file "/home/ise/testpano/utils_pack.vhd" into library work
+Parsing VHDL file "/home/ise/daveland/github/Panotest/utils_pack.vhd" into library work
 Parsing package <utils_pack>.
 Parsing package body <utils_pack>.
-Parsing VHDL file "/home/ise/testpano/simple_counter.vhd" into library work
+Parsing VHDL file "/home/ise/daveland/github/Panotest/simple_counter.vhd" into library work
 Parsing entity <simple_counter>.
 Parsing architecture <Behavioral> of entity <simple_counter>.
-Parsing VHDL file "/home/ise/testpano/toplevel.vhdl" into library work
+Parsing VHDL file "/home/ise/daveland/github/Panotest/toplevel.vhdl" into library work
 Parsing entity <toplevel>.
 Parsing architecture <Behavioral> of entity <toplevel>.
 
@@ -139,26 +142,27 @@ Elaborating entity <simple_counter> (architecture <Behavioral>) with generics fr
 =========================================================================
 
 Synthesizing Unit <toplevel>.
-    Related source file is "/home/ise/testpano/toplevel.vhdl".
+    Related source file is "/home/ise/daveland/github/Panotest/toplevel.vhdl".
 WARNING:Xst:647 - Input <pano_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <SYSRST_N> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/ise/testpano/toplevel.vhdl" line 71: Output port <CLK_OUT2> of the instance <clockpll> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/testpano/toplevel.vhdl" line 71: Output port <LOCKED> of the instance <clockpll> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/daveland/github/Panotest/toplevel.vhdl" line 118: Output port <CLK_OUT1> of the instance <clockpll> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/daveland/github/Panotest/toplevel.vhdl" line 118: Output port <CLK_OUT2> of the instance <clockpll> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/daveland/github/Panotest/toplevel.vhdl" line 118: Output port <LOCKED> of the instance <clockpll> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <toplevel> synthesized.
 
 Synthesizing Unit <pll2>.
-    Related source file is "/home/ise/testpano/ipcore_dir/pll2.vhd".
+    Related source file is "/home/ise/daveland/github/Panotest/ipcore_dir/pll2.vhd".
     Summary:
 	no macro.
 Unit <pll2> synthesized.
 
 Synthesizing Unit <simple_counter>.
-    Related source file is "/home/ise/testpano/simple_counter.vhd".
+    Related source file is "/home/ise/daveland/github/Panotest/simple_counter.vhd".
         NBIT = 48
     Found 48-bit register for signal <Qp>.
-    Found 48-bit adder for signal <Qp[47]_GND_12_o_mux_3_OUT> created at line 64.
+    Found 48-bit adder for signal <Qp[47]_GND_16_o_mux_3_OUT> created at line 64.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  48 D-type flip-flop(s).
@@ -216,7 +220,6 @@ WARNING:Xst:2677 - Node <divider/Qp_44> of sequential type is unconnected in blo
 WARNING:Xst:2677 - Node <divider/Qp_45> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <divider/Qp_46> of sequential type is unconnected in block <toplevel>.
 WARNING:Xst:2677 - Node <divider/Qp_47> of sequential type is unconnected in block <toplevel>.
-INFO:Xst:1901 - Instance clockpll/pll_base_inst in unit clockpll/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
 
 Optimizing unit <toplevel> ...
 
@@ -263,13 +266,13 @@ Primitive and Black Box Usage:
 #      XORCY                       : 28
 # FlipFlops/Latches                : 28
 #      FD                          : 28
-# Clock Buffers                    : 3
-#      BUFG                        : 3
+# Clock Buffers                    : 2
+#      BUFG                        : 2
 # IO Buffers                       : 5
 #      IBUFG                       : 1
 #      OBUF                        : 4
-# Others                           : 1
-#      PLL_ADV                     : 1
+# DCMs                             : 1
+#      DCM_SP                      : 1
 
 Device utilization summary:
 ---------------------------
@@ -283,10 +286,10 @@ Slice Logic Utilization:
     Number used as Logic:                28  out of  92152     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     28
-   Number with an unused Flip Flop:       0  out of     28     0%  
-   Number with an unused LUT:             0  out of     28     0%  
-   Number of fully used LUT-FF pairs:    28  out of     28   100%  
+ Number of LUT Flip Flop pairs used:     31
+   Number with an unused Flip Flop:       3  out of     31     9%  
+   Number with an unused LUT:             3  out of     31     9%  
+   Number of fully used LUT-FF pairs:    25  out of     31    80%  
    Number of unique control sets:         1
 
 IO Utilization: 
@@ -294,8 +297,7 @@ IO Utilization:
  Number of bonded IOBs:                   5  out of    338     1%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
- Number of PLL_ADVs:                      1  out of      6    16%  
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -318,7 +320,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clockpll/pll_base_inst/CLKOUT0     | BUFG                   | 28    |
+osc_clk                            | DCM_SP:CLKFX           | 28    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -329,7 +331,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.561ns (Maximum Frequency: 390.549MHz)
+   Minimum period: 10.242ns (Maximum Frequency: 97.637MHz)
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: 4.162ns
    Maximum combinational path delay: No path found
@@ -339,15 +341,15 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clockpll/pll_base_inst/CLKOUT0'
-  Clock period: 2.561ns (frequency: 390.549MHz)
+Timing constraint: Default period analysis for Clock 'osc_clk'
+  Clock period: 10.242ns (frequency: 97.637MHz)
   Total number of paths / destination ports: 406 / 28
 -------------------------------------------------------------------------
 Delay:               2.561ns (Levels of Logic = 29)
   Source:            divider/Qp_0 (FF)
   Destination:       divider/Qp_27 (FF)
-  Source Clock:      clockpll/pll_base_inst/CLKOUT0 rising
-  Destination Clock: clockpll/pll_base_inst/CLKOUT0 rising
+  Source Clock:      osc_clk rising 4.0X
+  Destination Clock: osc_clk rising 4.0X
 
   Data Path: divider/Qp_0 to divider/Qp_27
                                 Gate     Net
@@ -389,13 +391,13 @@ Delay:               2.561ns (Levels of Logic = 29)
                                        (73.4% logic, 26.6% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clockpll/pll_base_inst/CLKOUT0'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'osc_clk'
   Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
 Offset:              4.162ns (Levels of Logic = 1)
   Source:            divider/Qp_26 (FF)
   Destination:       led_red (PAD)
-  Source Clock:      clockpll/pll_base_inst/CLKOUT0 rising
+  Source Clock:      osc_clk rising 4.0X
 
   Data Path: divider/Qp_26 to led_red
                                 Gate     Net
@@ -412,24 +414,24 @@ Offset:              4.162ns (Levels of Logic = 1)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock clockpll/pll_base_inst/CLKOUT0
-------------------------------+---------+---------+---------+---------+
-                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------+---------+---------+---------+---------+
-clockpll/pll_base_inst/CLKOUT0|    2.561|         |         |         |
-------------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock osc_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+osc_clk        |    2.561|         |         |         |
+---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.10 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.23 secs
  
 --> 
 
 
-Total memory usage is 499576 kilobytes
+Total memory usage is 501544 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   22 (   0 filtered)

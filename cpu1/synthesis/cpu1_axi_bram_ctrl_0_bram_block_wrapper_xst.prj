@@ -1,0 +1,2 @@
+VHDL axi_bram_ctrl_0_bram_block_elaborate_v1_00_a /home/ise/daveland/github/Panotest/cpu1/hdl/elaborate/axi_bram_ctrl_0_bram_block_elaborate_v1_00_a/hdl/vhdl/axi_bram_ctrl_0_bram_block_elaborate.vhd
+vhdl work ../hdl/cpu1_axi_bram_ctrl_0_bram_block_wrapper.vhd

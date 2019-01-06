@@ -1,0 +1,31 @@
+#Please do not modify this file by hand
+XmpVersion: 14.7
+VerMgmt: 14.7
+IntStyle: ise
+Flow: ise
+MHS File: cpu1.mhs
+Architecture: spartan6
+Device: xc6slx150
+Package: fgg484
+SpeedGrade: -2
+UserCmd1: 
+UserCmd1Type: 0
+UserCmd2: 
+UserCmd2Type: 0
+GenSimTB: 0
+SdkExportBmmBit: 1
+SdkExportDir: SDK/SDK_Export
+InsertNoPads: 1
+WarnForEAArch: 1
+HdlLang: vhdl
+SimModel: BEHAVIORAL
+ExternalMemSim: 0
+UcfFile: data/cpu1.ucf
+EnableParTimingError: 1
+ShowLicenseDialog: 1
+BInfo: 
+ICacheAddr: axi_bram_ctrl_0,C_S_AXI_BASEADDR
+DCacheAddr: axi_bram_ctrl_0,C_S_AXI_BASEADDR
+Processor: microblaze_0
+ElfImp: 
+ElfSim: 

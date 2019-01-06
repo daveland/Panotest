@@ -10,8 +10,14 @@ Target Device  : xc6slx150
 Target Package : fgg484
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Sun Dec 30 03:38:01 2018
+Mapped Date    : Sat Jan  5 10:03:06 2019
 
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:56 - Part 'xc6slx150' is not a WebPack part.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+----------------------------------------------------------------------
 Mapping design into LUTs...
 Running directed packing...
 Running delay-based LUT packing...
@@ -19,54 +25,54 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 11 secs 
-Total CPU  time at the beginning of Placer: 10 secs 
+Total REAL time at the beginning of Placer: 23 secs 
+Total CPU  time at the beginning of Placer: 21 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:c4666df4) REAL time: 14 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:99bcacc4) REAL time: 28 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:c4666df4) REAL time: 14 secs 
+Phase 2.7  Design Feasibility Check (Checksum:99bcacc4) REAL time: 28 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:c4666df4) REAL time: 14 secs 
+Phase 3.31  Local Placement Optimization (Checksum:99bcacc4) REAL time: 28 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:fe231852) REAL time: 16 secs 
+(Checksum:d6d8a72f) REAL time: 35 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:fe231852) REAL time: 16 secs 
+Phase 5.36  Local Placement Optimization (Checksum:d6d8a72f) REAL time: 35 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:fe231852) REAL time: 16 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:d6d8a72f) REAL time: 35 secs 
 
 Phase 7.3  Local Placement Optimization
-Phase 7.3  Local Placement Optimization (Checksum:fe231852) REAL time: 16 secs 
+Phase 7.3  Local Placement Optimization (Checksum:d6d8a72f) REAL time: 35 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:fe231852) REAL time: 16 secs 
+Phase 8.5  Local Placement Optimization (Checksum:d6d8a72f) REAL time: 35 secs 
 
 Phase 9.8  Global Placement
 ..
 ..
-Phase 9.8  Global Placement (Checksum:e02c5176) REAL time: 17 secs 
+Phase 9.8  Global Placement (Checksum:b8e1e053) REAL time: 36 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:e02c5176) REAL time: 17 secs 
+Phase 10.5  Local Placement Optimization (Checksum:b8e1e053) REAL time: 36 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:76bd2d26) REAL time: 17 secs 
+Phase 11.18  Placement Optimization (Checksum:4f72bc03) REAL time: 36 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:76bd2d26) REAL time: 17 secs 
+Phase 12.5  Local Placement Optimization (Checksum:4f72bc03) REAL time: 36 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:76bd2d26) REAL time: 17 secs 
+Phase 13.34  Placement Validation (Checksum:4f72bc03) REAL time: 36 secs 
 
-Total REAL time to Placer completion: 17 secs 
-Total CPU  time to Placer completion: 16 secs 
+Total REAL time to Placer completion: 36 secs 
+Total CPU  time to Placer completion: 34 secs 
 Running post-placement packing...
 Writing output files...
 
@@ -127,7 +133,9 @@ Specific Feature Utilization:
   Number of BUFG/BUFGMUXs:                       2 out of      16   12%
     Number used as BUFGs:                        2
     Number used as BUFGMUX:                      0
-  Number of DCM/DCM_CLKGENs:                     0 out of      12    0%
+  Number of DCM/DCM_CLKGENs:                     1 out of      12    8%
+    Number used as DCMs:                         1
+    Number used as DCM_CLKGENs:                  0
   Number of ILOGIC2/ISERDES2s:                   0 out of     586    0%
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     586    0%
   Number of OLOGIC2/OSERDES2s:                   0 out of     586    0%
@@ -139,16 +147,16 @@ Specific Feature Utilization:
   Number of ICAPs:                               0 out of       1    0%
   Number of MCBs:                                0 out of       4    0%
   Number of PCILOGICSEs:                         0 out of       2    0%
-  Number of PLL_ADVs:                            1 out of       6   16%
+  Number of PLL_ADVs:                            0 out of       6    0%
   Number of PMVs:                                0 out of       1    0%
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
 Average Fanout of Non-Clock Nets:                1.02
 
-Peak Memory Usage:  1034 MB
-Total REAL time to MAP completion:  18 secs 
-Total CPU time to MAP completion:   17 secs 
+Peak Memory Usage:  1018 MB
+Total REAL time to MAP completion:  37 secs 
+Total CPU time to MAP completion:   35 secs 
 
 Mapping completed.
 See MAP report file "toplevel_map.mrp" for details.

@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Fri Jan  4 09:43:11 2019
+# Process ID: 6340
+# Log file: /home/ise/daveland/github/Panotest/planAhead_run_5/planAhead.log
+# Journal file: /home/ise/daveland/github/Panotest/planAhead_run_5/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/ise/daveland/github/Panotest/pa.fromHdl.tcl
+update_compile_order -fileset sim_1

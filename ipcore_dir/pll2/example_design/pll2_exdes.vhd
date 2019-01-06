@@ -71,9 +71,9 @@ port
   CLK_IN1           : in  std_logic;
   -- Reset that only drives logic in example design
   COUNTER_RESET     : in  std_logic;
-  CLK_OUT           : out std_logic_vector(2 downto 1) ;
+  CLK_OUT           : out std_logic_vector(3 downto 1) ;
   -- High bits of counters driven by clocks
-  COUNT             : out std_logic_vector(2 downto 1);
+  COUNT             : out std_logic_vector(3 downto 1);
   -- Status and control signals
   RESET             : in  std_logic;
   LOCKED            : out std_logic
@@ -88,7 +88,7 @@ architecture xilinx of pll2_exdes is
   constant C_W        : integer := 16;
 
   -- Number of counters
-  constant NUM_C      : integer := 2;
+  constant NUM_C      : integer := 3;
   -- Array typedef
   type ctrarr is array (1 to NUM_C) of std_logic_vector(C_W-1 downto 0);
 
@@ -101,6 +101,10 @@ architecture xilinx of pll2_exdes is
   signal   clk_int    : std_logic_vector(NUM_C downto 1);
   signal   clk_n  : std_logic_vector(NUM_C downto 1);
   signal   counter    : ctrarr := (( others => (others => '0')));
+
+  -- Connect the feedback on chip
+  signal   CLKFB_IN     : std_logic;
+  signal   CLKFB_OUT    : std_logic;
   signal rst_sync : std_logic_vector(NUM_C downto 1);
   signal rst_sync_int : std_logic_vector(NUM_C downto 1);
   signal rst_sync_int1 : std_logic_vector(NUM_C downto 1);
@@ -111,9 +115,12 @@ component pll2 is
 port
  (-- Clock in ports
   CLK_IN1           : in     std_logic;
+  CLKFB_IN          : in     std_logic;
   -- Clock out ports
   CLK_OUT1          : out    std_logic;
   CLK_OUT2          : out    std_logic;
+  CLK_OUT3          : out    std_logic;
+  CLKFB_OUT         : out    std_logic;
   -- Status and control signals
   RESET             : in     std_logic;
   LOCKED            : out    std_logic
@@ -145,15 +152,21 @@ begin
 end generate counters_1;
 
 
+  -- Connect the feedback on chip- duplicate the delay for CLK_OUT1
+  CLKFB_IN <= CLKFB_OUT;
+
   -- Instantiation of the clocking network
   ----------------------------------------
   clknetwork : pll2
   port map
    (-- Clock in ports
     CLK_IN1            => CLK_IN1,
+    CLKFB_IN           => CLKFB_IN,
     -- Clock out ports
     CLK_OUT1           => clk_int(1),
     CLK_OUT2           => clk_int(2),
+    CLK_OUT3           => clk_int(3),
+    CLKFB_OUT          => CLKFB_OUT,
     -- Status and control signals
     RESET              => RESET,
     LOCKED             => locked_int);
@@ -176,8 +189,18 @@ end generate counters_1;
 
   -- Connect the output clocks to the design
   -------------------------------------------
-  clk(1) <= clk_int(1);
-  clk(2) <= clk_int(2);
+  clkout1_buf : BUFG
+  port map
+   (O => clk(1),
+    I => clk_int(1));
+  clkout2_buf : BUFG
+  port map
+   (O => clk(2),
+    I => clk_int(2));
+  clkout3_buf : BUFG
+  port map
+   (O => clk(3),
+    I => clk_int(3));
 
   -- Output clock sampling
   -------------------------------------

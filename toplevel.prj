@@ -1,3 +1,4 @@
+vhdl work "/home/ise/daveland/github/Panotest/cpu1/hdl/cpu1.vhd"
 vhdl work "ipcore_dir/pll2.vhd"
 vhdl work "utils_pack.vhd"
 vhdl work "simple_counter.vhd"
