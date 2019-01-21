@@ -101,7 +101,8 @@ led_green <= counter_output(26);
 
 
 -- clock in SYSRST_N and create SYSRST
--- wait for pll to lock 
+-- wait for pll to lock before releasing SYSRST and RESET_OUT_N
+--
 process(clk100mhz, SYSRST_N,locked)
     begin
 	if SYSRST_N = '0' then

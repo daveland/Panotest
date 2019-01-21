@@ -133,7 +133,7 @@ Elaborating entity <toplevel> (architecture <Behavioral>) from library <work>.
 Elaborating entity <pll2> (architecture <xilinx>) from library <work>.
 
 Elaborating entity <simple_counter> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:1127 - "/home/ise/testpano/toplevel.vhdl" Line 105: Assignment to sysrst ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/testpano/toplevel.vhdl" Line 106: Assignment to sysrst ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -449,13 +449,13 @@ clockpll/pll_base_inst/CLKOUT0|    2.537|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.00 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 7.53 secs
  
 --> 
 
 
-Total memory usage is 499584 kilobytes
+Total memory usage is 499504 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   23 (   0 filtered)
